@@ -1,0 +1,52 @@
+models:
+  Category:
+    name     : string
+    description : text nullable
+    relationships:
+      hasMany: Article
+  
+  ArticleType:
+    name : string 
+
+  MeasureUnit:
+    name : string
+  
+  Color: 
+    Code: integer nullable
+    name: string 
+
+  Article:
+    name : string 
+    price : decimal 
+    stock : integer 
+    category_id : id foreign 
+    color_id : id foreign 
+    article_type_id : id foreign 
+    measure_unit_id : id foreign 
+  
+  Discount: 
+    article_id : id foreign 
+    amount : integer 
+
+controllers:
+  Category:
+    resource
+
+  ArticleType:
+    resource
+
+  MeasureUnit:
+    resource
+    
+  Color:
+    resource
+
+  Article:
+    resource
+
+  Discount:
+    resource
+  
+  
+  
+

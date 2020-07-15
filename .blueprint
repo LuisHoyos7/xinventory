@@ -1,0 +1,79 @@
+created:
+    - database/migrations/2020_07_13_193101_create_categories_table.php
+    - database/migrations/2020_07_13_193102_create_article_types_table.php
+    - database/migrations/2020_07_13_193103_create_measure_units_table.php
+    - database/migrations/2020_07_13_193104_create_colors_table.php
+    - database/migrations/2020_07_13_193105_create_articles_table.php
+    - database/migrations/2020_07_13_193106_create_discounts_table.php
+    - app/Category.php
+    - app/ArticleType.php
+    - app/MeasureUnit.php
+    - app/Color.php
+    - app/Article.php
+    - app/Discount.php
+    - database/factories/CategoryFactory.php
+    - database/factories/ArticleTypeFactory.php
+    - database/factories/MeasureUnitFactory.php
+    - database/factories/ColorFactory.php
+    - database/factories/ArticleFactory.php
+    - database/factories/DiscountFactory.php
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/ArticleTypeController.php
+    - app/Http/Controllers/MeasureUnitController.php
+    - app/Http/Controllers/ColorController.php
+    - app/Http/Controllers/ArticleController.php
+    - app/Http/Controllers/DiscountController.php
+    - app/Http/Requests/ArticleTypeStoreRequest.php
+    - app/Http/Requests/ArticleTypeUpdateRequest.php
+    - app/Http/Requests/MeasureUnitStoreRequest.php
+    - app/Http/Requests/MeasureUnitUpdateRequest.php
+    - app/Http/Requests/ColorStoreRequest.php
+    - app/Http/Requests/ColorUpdateRequest.php
+    - app/Http/Requests/ArticleStoreRequest.php
+    - app/Http/Requests/ArticleUpdateRequest.php
+    - app/Http/Requests/DiscountStoreRequest.php
+    - app/Http/Requests/DiscountUpdateRequest.php
+    - resources/views/articleType/index.blade.php
+    - resources/views/articleType/create.blade.php
+    - resources/views/articleType/show.blade.php
+    - resources/views/articleType/edit.blade.php
+    - resources/views/measureUnit/index.blade.php
+    - resources/views/measureUnit/create.blade.php
+    - resources/views/measureUnit/show.blade.php
+    - resources/views/measureUnit/edit.blade.php
+    - resources/views/color/index.blade.php
+    - resources/views/color/create.blade.php
+    - resources/views/color/show.blade.php
+    - resources/views/color/edit.blade.php
+    - resources/views/article/index.blade.php
+    - resources/views/article/create.blade.php
+    - resources/views/article/show.blade.php
+    - resources/views/article/edit.blade.php
+    - resources/views/discount/index.blade.php
+    - resources/views/discount/create.blade.php
+    - resources/views/discount/show.blade.php
+    - resources/views/discount/edit.blade.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/ArticleTypeControllerTest.php
+    - tests/Feature/Http/Controllers/MeasureUnitControllerTest.php
+    - tests/Feature/Http/Controllers/ColorControllerTest.php
+    - tests/Feature/Http/Controllers/ArticleControllerTest.php
+    - tests/Feature/Http/Controllers/DiscountControllerTest.php
+updated:
+    - routes/web.php
+models:
+    Category: { name: string, description: 'text nullable', relationships: { hasMany: Article } }
+    Course: { name: string, category_id: biginteger }
+    Customer: { name: string, mail: string, mobile: integer, user_id: biginteger }
+    Cutomer: {  }
+    Estimate: { course_id: biginteger, work_type_id: biginteger, customer_id: biginteger, delivery_date: date, delivery_hour: time, description: 'string:2000 nullable', theme: 'string nullable', sheets_number: 'string nullable', standard: 'string nullable', other_course: 'string nullable', other_work_type: 'string nullable' }
+    Image: { path: string, estimate_id: biginteger }
+    ServiceCourse: {  }
+    ServiceType: { name: string }
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    WorkType: { name: string, service_type_id: biginteger }
+    ArticleType: { name: string }
+    MeasureUnit: { name: string }
+    Color: { Code: 'integer nullable', name: string }
+    Article: { name: string, price: decimal, stock: integer, category_id: 'id foreign', color_id: 'id foreign', article_type_id: 'id foreign', measure_unit_id: 'id foreign' }
+    Discount: { article_id: 'id foreign', amount: integer }
