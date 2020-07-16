@@ -1,8 +1,8 @@
-{!! Form::open(['route' => 'discount.stock']) !!}
+{!! Form::open(['route' => 'invoice.store']) !!}
 <div class="card card-custom gutter-b example example-compact">
 	<div class="card-header">
 		<h3 class="card-title">
-			Descuentos Manuales
+			Crear Factura
 		</h3>
   </div>
   <div class="card-body">
@@ -16,13 +16,25 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-2">
-                {{ Form::label('Stock Actual')}}
-                <input disabled  class="form-control stock ">
+            <div class="col-md-1">
+                {{ Form::label('Stock')}}
+                <input disabled  class="form-control stock">
             </div>
             <div class="col-md-2">
-                {{ Form::label('Descontar')}}
-                <input type="number" class="form-control" name="discount" id="discount">
+                {{ Form::label('Precio')}}
+                <input type="number" class="form-control" name="discount" id="price">
+            </div>
+            <div class="col-md-1">
+                {{ Form::label('Cantidad')}}
+                <input type="number" class="form-control" name="discount"  value="1">
+            </div>
+            <div class="col-md-2">
+                {{ Form::label('Descuento')}}
+                <input type="number" class="form-control" name="discount"  value="0.00">
+            </div>
+            <div class="col-md-1">
+                {{ Form::label('Iva')}}
+                <input type="iva" class="form-control" name="discount" >
             </div>
             <div class="col-md-1">
                 {{ Form::label('Agregar')}}

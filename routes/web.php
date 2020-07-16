@@ -24,3 +24,16 @@ Route::put('article/{article}', 'ArticleController@addStock')->name('add.stock')
 Route::resource('discount', 'DiscountController');
 Route::post('discount/descuentos', 'DiscountController@discountStock')->name('discount.stock');
 Route::get('discount/getArticleStock/{article}', 'DiscountController@getArticleStock');
+
+Route::resource('person', 'PersonController');
+
+Route::resource('payment-type', 'PaymentTypeController');
+
+Route::resource('iva', 'IvaController');
+
+Route::resource('estado', 'EstadoController');
+
+Route::resource('invoice', 'InvoiceController');
+Route::get('invoice/getArticleStock/{article}', 'DiscountController@getArticleStock');
+
+Route::resource('article-invoice', 'ArticleInvoiceController');

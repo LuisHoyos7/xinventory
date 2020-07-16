@@ -122,8 +122,6 @@ class DiscountController extends Controller
 
     public function getArticleStock(Article $article)
     {
-        $stock = $article->stock;
-
-        return  response()->json($stock);
+        return  response()->json($article);
     }
 }

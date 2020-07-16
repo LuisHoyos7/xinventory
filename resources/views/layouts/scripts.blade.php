@@ -81,8 +81,9 @@ y se puede descontar -->
                 dataType: 'json'
         })
 
-        .done(function (stock) {
-            $("#stock").val(stock);
+        .done(function (article) {
+            $(".stock").val(article.stock);
+            $("#price").val(article.price);
         })
     })
 

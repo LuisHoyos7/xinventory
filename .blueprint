@@ -1,64 +1,70 @@
 created:
-    - database/migrations/2020_07_13_193101_create_categories_table.php
-    - database/migrations/2020_07_13_193102_create_article_types_table.php
-    - database/migrations/2020_07_13_193103_create_measure_units_table.php
-    - database/migrations/2020_07_13_193104_create_colors_table.php
-    - database/migrations/2020_07_13_193105_create_articles_table.php
-    - database/migrations/2020_07_13_193106_create_discounts_table.php
-    - app/Category.php
-    - app/ArticleType.php
-    - app/MeasureUnit.php
-    - app/Color.php
-    - app/Article.php
-    - app/Discount.php
-    - database/factories/CategoryFactory.php
-    - database/factories/ArticleTypeFactory.php
-    - database/factories/MeasureUnitFactory.php
-    - database/factories/ColorFactory.php
-    - database/factories/ArticleFactory.php
-    - database/factories/DiscountFactory.php
-    - app/Http/Controllers/CategoryController.php
-    - app/Http/Controllers/ArticleTypeController.php
-    - app/Http/Controllers/MeasureUnitController.php
-    - app/Http/Controllers/ColorController.php
-    - app/Http/Controllers/ArticleController.php
-    - app/Http/Controllers/DiscountController.php
-    - app/Http/Requests/ArticleTypeStoreRequest.php
-    - app/Http/Requests/ArticleTypeUpdateRequest.php
-    - app/Http/Requests/MeasureUnitStoreRequest.php
-    - app/Http/Requests/MeasureUnitUpdateRequest.php
-    - app/Http/Requests/ColorStoreRequest.php
-    - app/Http/Requests/ColorUpdateRequest.php
-    - app/Http/Requests/ArticleStoreRequest.php
-    - app/Http/Requests/ArticleUpdateRequest.php
-    - app/Http/Requests/DiscountStoreRequest.php
-    - app/Http/Requests/DiscountUpdateRequest.php
-    - resources/views/articleType/index.blade.php
-    - resources/views/articleType/create.blade.php
-    - resources/views/articleType/show.blade.php
-    - resources/views/articleType/edit.blade.php
-    - resources/views/measureUnit/index.blade.php
-    - resources/views/measureUnit/create.blade.php
-    - resources/views/measureUnit/show.blade.php
-    - resources/views/measureUnit/edit.blade.php
-    - resources/views/color/index.blade.php
-    - resources/views/color/create.blade.php
-    - resources/views/color/show.blade.php
-    - resources/views/color/edit.blade.php
-    - resources/views/article/index.blade.php
-    - resources/views/article/create.blade.php
-    - resources/views/article/show.blade.php
-    - resources/views/article/edit.blade.php
-    - resources/views/discount/index.blade.php
-    - resources/views/discount/create.blade.php
-    - resources/views/discount/show.blade.php
-    - resources/views/discount/edit.blade.php
-    - tests/Feature/Http/Controllers/CategoryControllerTest.php
-    - tests/Feature/Http/Controllers/ArticleTypeControllerTest.php
-    - tests/Feature/Http/Controllers/MeasureUnitControllerTest.php
-    - tests/Feature/Http/Controllers/ColorControllerTest.php
-    - tests/Feature/Http/Controllers/ArticleControllerTest.php
-    - tests/Feature/Http/Controllers/DiscountControllerTest.php
+    - database/migrations/2020_07_16_000423_create_people_table.php
+    - database/migrations/2020_07_16_000424_create_payment_types_table.php
+    - database/migrations/2020_07_16_000425_create_ivas_table.php
+    - database/migrations/2020_07_16_000426_create_estados_table.php
+    - database/migrations/2020_07_16_000427_create_invoices_table.php
+    - database/migrations/2020_07_16_000428_create_article_invoices_table.php
+    - app/Person.php
+    - app/PaymentType.php
+    - app/Iva.php
+    - app/Estado.php
+    - app/Invoice.php
+    - app/ArticleInvoice.php
+    - database/factories/PersonFactory.php
+    - database/factories/PaymentTypeFactory.php
+    - database/factories/IvaFactory.php
+    - database/factories/EstadoFactory.php
+    - database/factories/InvoiceFactory.php
+    - database/factories/ArticleInvoiceFactory.php
+    - app/Http/Controllers/PersonController.php
+    - app/Http/Controllers/PaymentTypeController.php
+    - app/Http/Controllers/IvaController.php
+    - app/Http/Controllers/EstadoController.php
+    - app/Http/Controllers/InvoiceController.php
+    - app/Http/Controllers/ArticleInvoiceController.php
+    - app/Http/Requests/PersonStoreRequest.php
+    - app/Http/Requests/PersonUpdateRequest.php
+    - app/Http/Requests/PaymentTypeStoreRequest.php
+    - app/Http/Requests/PaymentTypeUpdateRequest.php
+    - app/Http/Requests/IvaStoreRequest.php
+    - app/Http/Requests/IvaUpdateRequest.php
+    - app/Http/Requests/EstadoStoreRequest.php
+    - app/Http/Requests/EstadoUpdateRequest.php
+    - app/Http/Requests/InvoiceStoreRequest.php
+    - app/Http/Requests/InvoiceUpdateRequest.php
+    - app/Http/Requests/ArticleInvoiceStoreRequest.php
+    - app/Http/Requests/ArticleInvoiceUpdateRequest.php
+    - resources/views/person/index.blade.php
+    - resources/views/person/create.blade.php
+    - resources/views/person/show.blade.php
+    - resources/views/person/edit.blade.php
+    - resources/views/paymentType/index.blade.php
+    - resources/views/paymentType/create.blade.php
+    - resources/views/paymentType/show.blade.php
+    - resources/views/paymentType/edit.blade.php
+    - resources/views/iva/index.blade.php
+    - resources/views/iva/create.blade.php
+    - resources/views/iva/show.blade.php
+    - resources/views/iva/edit.blade.php
+    - resources/views/estado/index.blade.php
+    - resources/views/estado/create.blade.php
+    - resources/views/estado/show.blade.php
+    - resources/views/estado/edit.blade.php
+    - resources/views/invoice/index.blade.php
+    - resources/views/invoice/create.blade.php
+    - resources/views/invoice/show.blade.php
+    - resources/views/invoice/edit.blade.php
+    - resources/views/articleInvoice/index.blade.php
+    - resources/views/articleInvoice/create.blade.php
+    - resources/views/articleInvoice/show.blade.php
+    - resources/views/articleInvoice/edit.blade.php
+    - tests/Feature/Http/Controllers/PersonControllerTest.php
+    - tests/Feature/Http/Controllers/PaymentTypeControllerTest.php
+    - tests/Feature/Http/Controllers/IvaControllerTest.php
+    - tests/Feature/Http/Controllers/EstadoControllerTest.php
+    - tests/Feature/Http/Controllers/InvoiceControllerTest.php
+    - tests/Feature/Http/Controllers/ArticleInvoiceControllerTest.php
 updated:
     - routes/web.php
 models:
@@ -77,3 +83,9 @@ models:
     Color: { Code: 'integer nullable', name: string }
     Article: { name: string, price: decimal, stock: integer, category_id: 'id foreign', color_id: 'id foreign', article_type_id: 'id foreign', measure_unit_id: 'id foreign' }
     Discount: { article_id: 'id foreign', amount: integer }
+    Person: { name: string, direction: string, mobile: 'string nullable', mail: 'string nullable', is_employed: 'boolean nullable', is_worker: 'boolean nullable', is_provider: 'boolean nullable', nuip: 'string nullable' }
+    PaymentType: { name: string }
+    Iva: { name: string, description: text }
+    Estado: { name: string, description: string }
+    Invoice: { number_invoice: integer, person_id: 'id foreign', payment_type_id: 'id foreign', estado_id: 'id foreign', date: date }
+    ArticleInvoice: { article_id: 'id foreign', invoice_id: 'id foreign', iva_id: 'id foreign', amount_article: integer, price_article: decimal, discount: decimal }

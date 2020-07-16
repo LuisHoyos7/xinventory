@@ -1,52 +1,56 @@
 models:
-  Category:
-    name     : string
-    description : text nullable
-    relationships:
-      hasMany: Article
+  Person:
+    name: string
+    direction: string
+    mobile: string nullable
+    mail: string nullable 
+    is_employed: boolean nullable 
+    is_worker: boolean nullable 
+    is_provider: boolean nullable 
+    nuip: string nullable 
   
-  ArticleType:
-    name : string 
-
-  MeasureUnit:
-    name : string
-  
-  Color: 
-    Code: integer nullable
+  PaymentType: 
     name: string 
 
-  Article:
-    name : string 
-    price : decimal 
-    stock : integer 
-    category_id : id foreign 
-    color_id : id foreign 
-    article_type_id : id foreign 
-    measure_unit_id : id foreign 
+  Iva:
+    name: string 
+    description: text
+
+  Estado: 
+    name: string 
+    description: string 
+
+  Invoice: 
+    number_invoice: integer 
+    person_id: id foreign 
+    payment_type_id: id foreign 
+    estado_id: id foreign 
+    date: date
   
-  Discount: 
-    article_id : id foreign 
-    amount : integer 
+  ArticleInvoice:
+    article_id: id foreign 
+    invoice_id : id foreign 
+    iva_id : id foreign
+    amount_article: integer 
+    price_article: decimal 
+    discount: decimal
 
 controllers:
-  Category:
+
+  Person: 
     resource
 
-  ArticleType:
+  PaymentType:
     resource
 
-  MeasureUnit:
-    resource
-    
-  Color:
+  Iva:
     resource
 
-  Article:
+  Estado:
     resource
 
-  Discount:
+  Invoice:
     resource
-  
-  
-  
 
+  ArticleInvoice:
+    resource
