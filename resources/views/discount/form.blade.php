@@ -1,4 +1,4 @@
-{!! Form::open(['route' => 'discount.stock']) !!}
+{!! Form::open(['route' => 'discount.stock' ]) !!}
 <div class="card card-custom gutter-b example example-compact">
 	<div class="card-header">
 		<h3 class="card-title">

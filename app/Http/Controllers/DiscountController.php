@@ -43,6 +43,7 @@ class DiscountController extends Controller
 
         $request->session()->flash('discount.id', $discount->id);
 
+
         return redirect()->route('discount.index');
     }
 

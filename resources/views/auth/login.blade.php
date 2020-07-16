@@ -10,12 +10,12 @@
 	<div class="d-flex flex-column flex-root">
 		<!--begin::Login-->
 			<div class="login login-5 login-signin-on d-flex flex-row-fluid" id="kt_login">
-				<div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url(metronic/dist/assets/media/bg/bg-2.jpg);">
+				<div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-color:black">
 					<div class="login-form text-center text-white p-7 position-relative overflow-hidden">
 						<!--begin::Login Header-->
 							<div class="d-flex flex-center mb-15">
 								<a href="#">
-									<img src="metronic/dist/assets/media/logos/logo-g-2.png" width="140px" alt="" class="img-fluid ml-10"/>
+									<img src="logo.png" width="180px" alt="" class="img-fluid"/>
 								</a>
 							</div>
 
@@ -48,7 +48,7 @@
 								</div>
 								  
 								<div class="form-group text-center mt-10">
-									<button type="submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3">
+									<button type="submit" class="btn btn-outline-warning  px-15 py-3">
                                     	Ingresar
 									</button>
 								</div>

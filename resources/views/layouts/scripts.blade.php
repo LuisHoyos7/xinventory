@@ -86,7 +86,60 @@ y se puede descontar -->
             $("#price").val(article.price);
         })
     })
+    $('#addInvoice').on('click', function (e) {
+        e.preventDefault();
+        var article_id = $("#article option:selected").val();
+        var article_name = $("#article option:selected").text();
+        var article_price = $("#price").val();
+        var article_amount = $("#amount").val();
+        var article_discount = $("#discount").val();
+        var iva = $("#iva").val();
+        var total_price = parseFloat(article_amount) * parseFloat(article_price);
+        var html =
+            `<tr>
+                <td>${article_name}</td>
+                <td>${article_price}</td>
+                <td>${article_amount}</td>
+                <td>${article_discount}</td>
+                <td>${iva} </td>
+                <td>${total_price}</td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][descontar]" value="${discount}"></td>
+            </tr>`;
+        $('.table-discount').append(html);
 
+
+        var filas=document.querySelectorAll("#miTabla tbody tr");
+
+ var total_amount=0;
+ var total_price=0;
+ // recorremos cada una de las filas
+ filas.forEach(function(e) {
+
+     // obtenemos las columnas de cada fila
+     var columnas=e.querySelectorAll("td");
+
+     // obtenemos los valores de la cantidad y importe
+     var amount=parseFloat(columnas[2].textContent);
+
+     var price=parseFloat(columnas[1].textContent);
+
+     // mostramos el total por fila
+   
+
+     total_amount+=amount;
+     total_price += price;
+ });
+
+ // mostramos la suma total
+ $('#totalPrice').html(total_price.toFixed(2));
+ $('#totalAmount').html(total_amount.toFixed(2));
+
+     
+
+        
+    })
+  
+     
     //en este metodo se van agregando los articulos en la vista de descuentos manuales 
     // que se van a descontar con su respectiva cantidad a descontar, de igual manera 
     // se envia un array detalle[] al controlador con cada uno de los articulos a descontar
@@ -103,8 +156,12 @@ y se puede descontar -->
                 <td></td>
                 <td></td>
                 <td>${discount}</td>
-                <td><input  style="width: 6em" type="number" name="detalle[${article_id}][descontar]" value="${discount}"></td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][descontar]" value="${discount}"></td>
             </tr>`;
         $('.table-discount').append(html);
     })
+
+
 </script>
+
+

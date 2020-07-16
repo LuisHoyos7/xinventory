@@ -18,27 +18,27 @@
             </div>
             <div class="col-md-1">
                 {{ Form::label('Stock')}}
-                <input disabled  class="form-control stock">
+                <input disabled  class="form-control stock" name="stock" id="stock">
             </div>
             <div class="col-md-2">
                 {{ Form::label('Precio')}}
-                <input type="number" class="form-control" name="discount" id="price">
+                <input type="number" class="form-control" name="proce" id="price" id="price">
             </div>
             <div class="col-md-1">
                 {{ Form::label('Cantidad')}}
-                <input type="number" class="form-control" name="discount"  value="1">
+                <input type="number" class="form-control amount"   id="amount" value="1" >
             </div>
             <div class="col-md-2">
                 {{ Form::label('Descuento')}}
-                <input type="number" class="form-control" name="discount"  value="0.00">
+                <input type="number" class="form-control" name="discount" id="discount" value="0.00">
             </div>
             <div class="col-md-1">
                 {{ Form::label('Iva')}}
-                <input type="iva" class="form-control" name="discount" >
+                <input type="iva" class="form-control" name="iva" id="iva" value="0.00">
             </div>
             <div class="col-md-1">
                 {{ Form::label('Agregar')}}
-                <a type="buttom" class="btn btn-outline-danger" id="addDate">
+                <a type="buttom" class="btn btn-outline-danger" id="addInvoice">
                     <i class="flaticon2-plus"></i>
                 </a>
             </div>
@@ -46,25 +46,35 @@
     </div>
   </div>
 
-<div class="card-body py-0 pb-40 px-40">
+<div class="card-body py-0 pb-40 px-10">
     <!--begin: Datatable-->
     
-    <table class="table table-discount table-head-custom table-hover table-vertical-center">
+    <table class="table table-discount table-head-custom table-hover table-vertical-center" id="miTabla">
         <thead>
             <tr>
-                <th></th>
-                <th></th>
                 <th>Articulo</th>
-                <th></th>
-                <th></th>
-                <th>Descontar</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Descuento</th>
+                <th>Iva</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
 
         </tbody>
+        <tfoot>
+            
+            
+        </tfoot>
 
-    </table>
+    </table><br><hr>
+    <div class="row">
+        <h5 class="px-5">Total Articulos</h5>
+        <span  id="totalPrice" class=" col-md-2 offset-2"></span>
+        <span  id="totalAmount" class=" col-md-2 offset-2"></span>
+    </div>
+    
 
 </div>
     <div class="card-footer">

@@ -46,9 +46,9 @@
                                 <td>{{$discount->amount}}</td>
                                 <td>{{$discount->created_at}}</td>
                                 <td>                                        
-                                    {{Form::open(['route' => ['discount.destroy', $discount->id], 'method' => 'DELETE'])}}
+                                    {{Form::open(['route' => ['discount.destroy', $discount->id], 'method' => 'DELETE',  'class' => 'myForm' , 'onsubmit' => 'false'])}}
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <button type="submit" class="btn btn-icon btn-outline-danger btn-shadow font-weight-bold" data-toggle="tooltip" data-theme="dark" title="Eliminar Descuento">
+                                            <button  class="btn btn-icon btn-outline-danger btn-shadow font-weight-bold" data-toggle="tooltip" data-theme="dark" title="Eliminar Descuento">
                                                 <i class="flaticon-delete-1"></i>
                                             </button>
                                         </div>
