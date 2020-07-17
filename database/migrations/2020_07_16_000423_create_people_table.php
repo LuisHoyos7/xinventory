@@ -19,7 +19,7 @@ class CreatePeopleTable extends Migration
             $table->string('direction');
             $table->string('mobile')->nullable();
             $table->string('mail')->nullable();
-            $table->boolean('is_employed')->nullable();
+            $table->boolean('is_customer')->nullable();
             $table->boolean('is_worker')->nullable();
             $table->boolean('is_provider')->nullable();
             $table->string('nuip')->nullable();

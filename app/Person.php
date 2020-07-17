@@ -16,7 +16,7 @@ class Person extends Model
         'direction',
         'mobile',
         'mail',
-        'is_employed',
+        'is_customer',
         'is_worker',
         'is_provider',
         'nuip',
@@ -29,7 +29,7 @@ class Person extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'is_employed' => 'boolean',
+        'is_customer' => 'boolean',
         'is_worker' => 'boolean',
         'is_provider' => 'boolean',
     ];

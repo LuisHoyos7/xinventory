@@ -112,6 +112,9 @@ y se puede descontar -->
 
  var total_amount=0;
  var total_price=0;
+ var total_buy=0;
+ var total_discount=0;
+ var total_iva=0;
  // recorremos cada una de las filas
  filas.forEach(function(e) {
 
@@ -123,16 +126,30 @@ y se puede descontar -->
 
      var price=parseFloat(columnas[1].textContent);
 
+     var discount = parseFloat(columnas[3].textContent);
+
+     var iva = parseFloat(columnas[4].textContent);
+
+     var total = parseFloat(columnas[5].textContent);
+
      // mostramos el total por fila
    
 
      total_amount+=amount;
      total_price += price;
+     total_discount += discount;
+     total_iva += iva;
+     total_buy += total;
+
+     
  });
 
  // mostramos la suma total
  $('#totalPrice').html(total_price.toFixed(2));
- $('#totalAmount').html(total_amount.toFixed(2));
+ $('#totalAmount').html(total_amount.toFixed(0));
+ $('#totalDiscount').html(total_discount.toFixed(2));
+ $('#totalIva').html(total_iva.toFixed(2));
+ $('#total').html(total_buy.toFixed(2));
 
      
 
@@ -165,3 +182,11 @@ y se puede descontar -->
 </script>
 
 
+
+<script>
+    $('#is_customer').on('change', function(e){
+        e.preventDefault();
+     var customer = $('input:checkbox[id=is_customer]:checked').val();
+     console.log(customer);
+    })
+</script>

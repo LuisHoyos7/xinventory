@@ -48,7 +48,6 @@
 
 <div class="card-body py-0 pb-40 px-10">
     <!--begin: Datatable-->
-    
     <table class="table table-discount table-head-custom table-hover table-vertical-center" id="miTabla">
         <thead>
             <tr>
@@ -63,19 +62,17 @@
         <tbody>
 
         </tbody>
-        <tfoot>
-            
-            
+        <tfoot class="mt-50">
+            <tr class="py-30">
+                <td><h4>Subtotal</h4></td>
+                <td>$<b id="totalPrice"></b></td>
+                <td><b id="totalAmount"></b></td>
+                <td>$<b id="totalDiscount"></b</td>
+                <td><b id="totalIva"></b</td>
+                <td>$<b id="total"></b></td>
+            </tr>
         </tfoot>
-
-    </table><br><hr>
-    <div class="row">
-        <h5 class="px-5">Total Articulos</h5>
-        <span  id="totalPrice" class=" col-md-2 offset-2"></span>
-        <span  id="totalAmount" class=" col-md-2 offset-2"></span>
-    </div>
-    
-
+    </table>
 </div>
     <div class="card-footer">
 		<button type="submit" class="btn  btn-warning mr-2">Guardar</button>
