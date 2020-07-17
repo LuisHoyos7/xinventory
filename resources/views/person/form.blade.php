@@ -38,26 +38,34 @@
        <div class="col-md-5">
           <div class="col-9 col-form-label py-12">
             <div class="checkbox-inline">
-              {{ Form::checkbox('is_customer', null,['class'  => 'form-control', 'placeholder' => 'Ingesa una identificacion']) }}
-
-              <label class="checkbox">
-              <input type="checkbox"  id="is_customer">
-              <span></span>Cliente</label>
-              <label class="checkbox">
-              <input type="checkbox" name="is_worker">
-              <span></span>Empleado</label>
-              <label class="checkbox">
-              <input type="checkbox" name="is_provider">
-              <span></span>Proveedor</label>
+              <div class="col-md-5">
+                  <label>
+                    {{ Form::checkbox('is_customer') }}
+                    <span></span>Cliente
+                  </label>
+              </div>
+              <div class="col-md-5">
+                <label>
+                  {{ Form::checkbox('is_provider') }}
+                  <span></span>Proveedor
+                </label>
+              </div>
+              <div class="col-md-5">
+                <label>
+                  {{ Form::checkbox('is_worker') }}
+                  <span></span>Empleado
+                </label>
+              </div>
             </div>
           </div>
-       </div>
+      </div>
     </div>
   </div>
+</div>
   <div class="card-footer">
-		<button type="submit" class="btn btn-warning mr-2">Guardar</button>
-		<button type="reset" class="btn btn-secondary">Cancelar</button>
-	</div>
+	  <button type="submit" class="btn btn-warning mr-2">Guardar</button>
+	  <button type="reset" class="btn btn-secondary">Cancelar</button>
+  </div>
 </div>
 
 {!! Form::close() !!}

@@ -46,9 +46,24 @@
                                 <td>{{$person->name}}</td>
                                 <td>{{$person->mobile}}</td>
                                 <td>{{$person->nuip}}</td>
-                                <td>{{$person->is_customer}}</td>
-                                <td>{{$person->is_employed}}</td>
-                                <td>{{$person->is_provider}}</td>
+                                @if($person->is_customer == true)
+                                <td>Si</td>
+                                @endif
+                                @if($person->is_customer == Null)
+                                <td>No</td>
+                                @endif
+                                @if($person->is_worker == true)
+                                <td>Si</td>
+                                @endif
+                                @if($person->is_worker == Null)
+                                <td>No</td>
+                                @endif
+                                @if($person->is_provider == true)
+                                <td>Si</td>
+                                @endif
+                                @if($person->is_provider == Null)
+                                <td>No</td>
+                                @endif
                                 <td>                                        
                                     {{Form::open(['route' => ['person.destroy', $person->id], 'method' => 'DELETE'])}}
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">

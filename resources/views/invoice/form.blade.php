@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-1">
                 {{ Form::label('Agregar')}}
-                <a type="buttom" class="btn btn-outline-danger" id="addInvoice">
+                <a type="buttom" class="btn btn-icon btn-danger" id="addInvoice">
                     <i class="flaticon2-plus"></i>
                 </a>
             </div>

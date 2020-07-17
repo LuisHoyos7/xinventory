@@ -103,6 +103,11 @@ y se puede descontar -->
                 <td>${article_discount}</td>
                 <td>${iva} </td>
                 <td>${total_price}</td>
+                <td>
+                    <buttom id="delete" class="btn btn-icon btn-light-danger">
+                        <i class="flaticon2-line"></i>
+                    </buttom>
+                </td>
                 <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][descontar]" value="${discount}"></td>
             </tr>`;
         $('.table-discount').append(html);
@@ -181,12 +186,3 @@ y se puede descontar -->
 
 </script>
 
-
-
-<script>
-    $('#is_customer').on('change', function(e){
-        e.preventDefault();
-     var customer = $('input:checkbox[id=is_customer]:checked').val();
-     console.log(customer);
-    })
-</script>

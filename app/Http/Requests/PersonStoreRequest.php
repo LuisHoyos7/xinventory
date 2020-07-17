@@ -28,9 +28,6 @@ class PersonStoreRequest extends FormRequest
             'direction' => 'required|string',
             'mobile' => 'string',
             'mail' => 'string',
-            'is_employed' => '',
-            'is_worker' => '',
-            'is_provider' => '',
             'nuip' => 'string',
         ];
     }
