@@ -24,7 +24,8 @@ Route::resource('article', 'ArticleController');
 Route::put('article/{article}', 'ArticleController@addStock')->name('add.stock');
 
 Route::resource('discount', 'DiscountController');
-Route::post('discount/descuentos', 'DiscountController@discountStock')->name('discount.stock');
+Route::post('discount/descuentos/reduccion', 'DiscountController@discountStock')->name('discount.stock');
+Route::post('discount/descuentos', 'DiscountController@addStock')->name('discount.stock.add');
 Route::get('discount/getArticleStock/{article}', 'DiscountController@getArticleStock');
 
 Route::resource('person', 'PersonController');

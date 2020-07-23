@@ -68,11 +68,8 @@ class InvoiceController extends Controller
                 'price_article' => $detalles['price'], 
                 'discount' => $detalles['discount'], // ojo este el descuento por alguna promocion del articulo , no el descuento a una cantidad del articulo
             ]);
+               
             
-              
-                
-            
-             
         }
 
         $request->session()->flash('invoice.id', $invoice->id);

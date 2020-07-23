@@ -16,9 +16,20 @@ class DiscountController extends Controller
      */
     public function index(Request $request)
     {
-        $discounts = Discount::all();
+        if($request->idStock == 1){
 
-        return view('discount.index', compact('discounts'));
+            $idStock = $request->idStock;
+
+            $discounts = Discount::where('movement','SALIDA')->get();
+
+            return view('discount.index', compact('discounts', 'idStock'));
+        }else
+        {
+            $discounts = Discount::where('movement','ENTRADA')->get();
+
+            return view('discount.index', compact('discounts'));
+        }
+
     }
 
     /**
@@ -27,9 +38,12 @@ class DiscountController extends Controller
      */
     public function create(Request $request)
     {
+        $idStock = $request->idStock;
+
         $articles = Article::all();
 
-        return view('discount.create', compact('articles'));
+        return view('discount.create', compact('articles', 'idStock'));
+    
     }
 
     /**
@@ -93,6 +107,35 @@ class DiscountController extends Controller
         return redirect()->route('discount.index');
     }
 
+    public function addStock(Request $request){
+
+        foreach($request->detalle as $id=>$index)
+        {
+            foreach($index as $index=>$discount)
+            {
+                $article = Article::findOrFail($id);
+
+                Discount::create([
+                    'article_id' => $id,
+                    'previousStock' => $article->stock,
+                    'amount' => $discount,
+                    'movement' => 'ENTRADA',
+                ]);
+
+                $article = Article::findOrFail($id);
+
+                $discount = $article->stock + $discount;
+
+                $article->update(['stock' => $discount]);
+                
+            }
+            
+        }
+
+        return redirect()->route('discount.index')
+            ->with('success' , 'Se ha Agregado al Stock Correctamente');
+    }
+
     public function discountStock(Request $request){
 
         foreach($request->detalle as $id=>$index)
@@ -104,7 +147,8 @@ class DiscountController extends Controller
                 Discount::create([
                     'article_id' => $id,
                     'previousStock' => $article->stock,
-                    'amount' => $discount
+                    'amount' => $discount,
+                    'movement' => 'SALIDA',
                 ]);
 
                 $article = Article::findOrFail($id);
@@ -117,7 +161,7 @@ class DiscountController extends Controller
             
         }
 
-        return redirect()->route('discount.index')
+        return redirect()->route('discount.index',['idStock' => 1])
             ->with('success' , 'Se ha descontado del Stock Correctamente');
     }
 

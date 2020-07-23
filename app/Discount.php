@@ -15,6 +15,7 @@ class Discount extends Model
         'article_id',
         'amount',
         'previousStock',
+        'movement',
     ];
 
     /**

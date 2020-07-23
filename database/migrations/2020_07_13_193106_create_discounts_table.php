@@ -8,6 +8,8 @@ class CreateDiscountsTable extends Migration
 {
     /**
      * Run the migrations.
+     * 
+     * cambiar esta tabla por movementStock
      *
      * @return void
      */
@@ -17,6 +19,7 @@ class CreateDiscountsTable extends Migration
             $table->id();
             $table->foreignId('article_id')->constrained()->cascadeOnDelete();
             $table->integer('amount');
+            $table->string('movement');
             $table->integer('previousStock');
             $table->timestamps();
         });

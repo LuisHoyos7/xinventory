@@ -1,8 +1,16 @@
+@if(!empty($idStock))
 {!! Form::open(['route' => 'discount.stock' ]) !!}
+@elseif(empty($idStock))
+{!! Form::open(['route' => 'discount.stock.add' ]) !!}
+@endif
 <div class="card card-custom gutter-b example example-compact">
 	<div class="card-header">
 		<h3 class="card-title">
-			Descuentos Manuales
+			@if(!empty($idStock))
+                Reducciones al Stock de Articulos 
+            @elseif(empty($idStock))
+                Adiciones al Stock de Articulos
+            @endif
 		</h3>
   </div>
   <div class="card-body">
@@ -21,7 +29,11 @@
                 <input disabled  class="form-control stock ">
             </div>
             <div class="col-md-2">
-                {{ Form::label('Descontar')}}
+                @if(!empty($idStock))
+                    {{ Form::label('Restar')}} 
+                @elseif(empty($idStock))
+                    {{ Form::label('Sumar')}}
+                @endif
                 <input type="number" class="form-control" name="discount" id="discount">
             </div>
             <div class="col-md-1">
@@ -45,7 +57,11 @@
                 <th>Articulo</th>
                 <th></th>
                 <th></th>
-                <th>Descontar</th>
+                @if(!empty($idStock))
+                    <th>Restar cantidad</th>
+                @elseif(empty($idStock))
+                    <th>Sumar Cantidad</th>
+                @endif
             </tr>
         </thead>
         <tbody>
