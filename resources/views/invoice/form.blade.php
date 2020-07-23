@@ -2,9 +2,17 @@
 <div class="card card-custom gutter-b example example-compact">
 	<div class="card-header">
 		<h3 class="card-title">
-			Crear Factura
-		</h3>
-  </div>
+			Crear Factura al Cliente
+        </h3>
+        <div class="col-md-8">
+            {{ Form::label('')}}
+            <select name="person_id" id="person" class="form-control" style="background:#E5EAEE">
+                @foreach ($people as $person)
+                   <option value="{{$person->id}}" placeholder="Seleccione"><b class="text-white">{{$person->name}}</b></option>
+                @endforeach
+            </select>
+        </div>
+  </div><br>
   <div class="card-body">
 	<div class="form-group form-group-last">
         <div class="row">
@@ -30,11 +38,11 @@
             </div>
             <div class="col-md-2">
                 {{ Form::label('Descuento')}}
-                <input type="number" class="form-control" name="discount" id="discount" value="0.00">
+                <input type="number" class="form-control" name="discount" id="discount" value="0">
             </div>
             <div class="col-md-1">
                 {{ Form::label('Iva')}}
-                <input type="iva" class="form-control" name="iva" id="iva" value="0.00">
+                <input type="iva" class="form-control" name="iva" id="iva" value="0">
             </div>
             <div class="col-md-1">
                 {{ Form::label('Agregar')}}
@@ -57,6 +65,11 @@
                 <th>Descuento</th>
                 <th>Iva</th>
                 <th>Total</th>
+                <th>Quitar</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -70,6 +83,11 @@
                 <td>$<b id="totalDiscount"></b</td>
                 <td><b id="totalIva"></b</td>
                 <td>$<b id="total"></b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </tfoot>
     </table>

@@ -26,9 +26,6 @@ class Invoice extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'person_id' => 'integer',
-        'payment_type_id' => 'integer',
-        'estado_id' => 'integer',
     ];
 
 

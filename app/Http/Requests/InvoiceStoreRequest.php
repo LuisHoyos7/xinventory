@@ -24,11 +24,7 @@ class InvoiceStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'number_invoice' => 'required|integer',
-            'person_id' => 'required|integer|exists:people,id',
-            'payment_type_id' => 'required|integer|exists:payment_types,id',
-            'estado_id' => 'required|integer|exists:estados,id',
-            'date' => 'required|date',
+           
         ];
     }
 }

@@ -108,7 +108,10 @@ y se puede descontar -->
                         <i class="flaticon2-line"></i>
                     </buttom>
                 </td>
-                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][descontar]" value="${discount}"></td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][amount]" value="${article_discount}"></td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][price]" value="${article_price}"></td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][discount]" value="${article_discount}"></td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][iva]" value="${iva}"></td>
             </tr>`;
         $('.table-discount').append(html);
 
@@ -182,7 +185,9 @@ y se puede descontar -->
             </tr>`;
         $('.table-discount').append(html);
     })
-
-
 </script>
+
+
+
+
 

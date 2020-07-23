@@ -45,16 +45,16 @@
                   </label>
               </div>
               <div class="col-md-5">
-                <label>
-                  {{ Form::checkbox('is_provider') }}
-                  <span></span>Proveedor
-                </label>
+                  <label>
+                    {{ Form::checkbox('is_provider') }}
+                    <span></span>Proveedor
+                  </label>
               </div>
               <div class="col-md-5">
-                <label>
-                  {{ Form::checkbox('is_worker') }}
-                  <span></span>Empleado
-                </label>
+                  <label>
+                    {{ Form::checkbox('is_worker') }}
+                    <span></span>Empleado
+                  </label>
               </div>
             </div>
           </div>

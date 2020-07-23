@@ -6,6 +6,8 @@ use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
 use App\Article;
+use App\Person;
+use App\ArticleInvoice;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -27,8 +29,11 @@ class InvoiceController extends Controller
      */
     public function create(Request $request)
     {
+        $people = Person::all();
+
         $articles = Article::all();
-        return view('invoice.create', compact('articles'));
+
+        return view('invoice.create', compact('articles', 'people'));
     }
 
     /**
@@ -37,11 +42,43 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
-        $invoice = Invoice::create($request->all());
+       
+        //se crea el encabezado de la factura 
+        $invoice = Invoice::create([
+            'person_id'  => $request->person_id,
+            'date'       => date('d-m-y'),
+            'payment_type_id' => 1,
+            'estado_id'   =>2,
+            'number_invoice' => 1,
+        ]);
+
+        foreach($request->detalle as $key=>$detalles)
+        {
+           
+
+            // se crean los detalles de la factura 
+            // se buscan los id DE TODOS LOS ARTICULOS QUE VIENEN EN EL ARRAY detalle[]
+            $article = Article::findOrFail($key);
+     
+            $articleInvoice = ArticleInvoice::create([
+                'article_id' => $key,
+                'invoice_id' => $invoice->id,
+                'iva_id'     => 2,
+                'amount_article'     => $detalles['amount'],
+                'price_article' => $detalles['price'], 
+                'discount' => $detalles['discount'], // ojo este el descuento por alguna promocion del articulo , no el descuento a una cantidad del articulo
+            ]);
+            
+              
+                
+            
+             
+        }
 
         $request->session()->flash('invoice.id', $invoice->id);
 
-        return redirect()->route('invoice.index');
+        return redirect()->route('invoice.index')
+            ->with('success', 'Factura Generada con Exito');
     }
 
     /**
