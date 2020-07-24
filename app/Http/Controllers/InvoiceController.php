@@ -43,6 +43,7 @@ class InvoiceController extends Controller
     public function store(InvoiceStoreRequest $request)
     {
        
+       
         //se crea el encabezado de la factura 
         $invoice = Invoice::create([
             'person_id'  => $request->person_id,
@@ -64,7 +65,7 @@ class InvoiceController extends Controller
                 'article_id' => $key,
                 'invoice_id' => $invoice->id,
                 'iva_id'     => 2,
-                'amount_article'     => $detalles['amount'],
+                'amount_article'  => $detalles['amount'],
                 'price_article' => $detalles['price'], 
                 'discount' => $detalles['discount'], // ojo este el descuento por alguna promocion del articulo , no el descuento a una cantidad del articulo
             ]);

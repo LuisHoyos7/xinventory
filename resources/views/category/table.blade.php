@@ -1,6 +1,6 @@
 <div class="card card-custom gutter-b">
 	<div class="card-header flex-wrap py-3">
-		<div class="card-title">
+		<div class="card-title"> 
 			<h3 class="card-label">
 				Categorias
 				<span class="d-block text-muted pt-2 font-size-sm">Listado general de las categorias</span>

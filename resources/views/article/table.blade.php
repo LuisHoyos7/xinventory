@@ -26,7 +26,7 @@
 		<div id="kt_datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
             <div class="row">
                 <div class="table-responsive">
-                    <table class="table table-head-custom table-hover table-vertical-center" id="article" role="grid" aria-describedby="kt_datatable_info">
+                    <table class="table table-head-custom table-hover table-vertical-center" id="articleTable" role="grid" aria-describedby="kt_datatable_info">
 			            <thead class="thead-light">
                             <tr>
                                 <th>Id</th>
@@ -37,7 +37,6 @@
                                 <th>Precio</th>
                                 <th>Stock</th>
                                 <th>Medida</th>
-                                <th>Agregar Stock</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -52,14 +51,6 @@
                                 <td>${{number_format($article->price, 2, '.', ',')}}</td>
                                 <td>{{number_format($article->stock)}}</td>
                                 <td>{{$article->measureUnit->name}}</td>
-                                <td>
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <!-- Button trigger modal-->
-                                        <button type="button" class="btn btn-icon btn-success" data-toggle="modal" data-target="#addStock">
-                                            <i class="flaticon2-plus"></i>
-                                        </button>
-                                    </div>
-                                </td>
                                 <td>                                        
                                     {{Form::open(['route' => ['article.destroy', $article->id], 'method' => 'DELETE'])}}
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -81,37 +72,3 @@
 	    </div><!--end: Datatable-->
     </div>
 </div>
-
-<!-- Modal agregar STOCK-->
-@if(!empty($article))
-{!! Form::open(['route' => ['add.stock', $article->id], 'method' => 'PUT']) !!}
-<div class="modal fade" id="addStock" tabindex="-1" role="dialog" aria-labelledby="addStockLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addStock">Agregar Stock a {{$article->name}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i aria-hidden="true" class="ki ki-close"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        {{ Form::label('Cantidad Actual')}}
-                        <input type="text" class="form-control" disabled value="{{$article->stock}}">
-                    </div>
-                    <div class="col-md-6">
-                        {{ Form::label('Cantidad a Ingresar')}}
-                        {{ Form::number('stock', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa una cantidad']) }}
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-outline-success font-weight-bold">Guardar</button>
-                <button type="button" class="btn btn-outline-secondary font-weight-bold" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-{!! Form::close() !!}
-@endif

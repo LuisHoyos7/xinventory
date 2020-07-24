@@ -16,7 +16,7 @@
   <div class="card-body">
 	<div class="form-group form-group-last">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5 offset-1">
                 {{ Form::label('Articulo')}}
                 <select name="article_id" id="article" class="form-control">
                     @foreach ($articles as $article)
@@ -34,11 +34,10 @@
                 @elseif(empty($idStock))
                     {{ Form::label('Sumar')}}
                 @endif
-                <input type="number" class="form-control" name="discount" id="discount">
+                <input type="number" class="form-control" name="discount" id="discount" value="0">
             </div>
             <div class="col-md-1">
-                {{ Form::label('Agregar')}}
-                <a type="buttom" class="btn btn-outline-danger" id="addDate">
+                <a type="buttom" class="btn btn-icon btn-danger my-8" data-toggle="tooltip" data-theme="dark" title="Agregar Item" id="addDate">
                     <i class="flaticon2-plus"></i>
                 </a>
             </div>
@@ -49,7 +48,7 @@
 <div class="card-body py-0 pb-40 px-40">
     <!--begin: Datatable-->
     
-    <table class="table table-discount table-head-custom table-hover table-vertical-center">
+    <table id="movementStockJs" class="table table-discount table-head-custom table-hover table-vertical-center">
         <thead>
             <tr>
                 <th></th>
@@ -67,9 +66,7 @@
         <tbody>
 
         </tbody>
-
     </table>
-
 </div>
     <div class="card-footer">
 		<button type="submit" class="btn  btn-warning mr-2">Guardar</button>

@@ -39,7 +39,8 @@ class CategoryController extends Controller
 
         $request->session()->flash('category.id', $category->id);
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')
+            ->with('success', 'Categoria Creada con Exito');
     }
 
     /**
@@ -69,11 +70,12 @@ class CategoryController extends Controller
      */
     public function update(CategoryUpdateRequest $request, Category $category)
     {
-        $category->update([]);
+        $category->update($request->all());
 
         $request->session()->flash('category.id', $category->id);
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')
+            ->with('info', 'Categoria Actualizada con Exito');
     }
 
     /**
@@ -85,6 +87,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')
+            ->with('error', 'Categoria Eliminada con Exito');;
     }
 }

@@ -18,6 +18,7 @@
 		<script src="{{ asset('metronic/dist/assets/js/pages/crud/datatables/basic/headers.js?v=7.0.5') }}"></script>
 		
 <script defer>
+    //datatable category
     $(document).ready(function() {
         $('#category').dataTable( {
             "language": {
@@ -27,21 +28,75 @@
             buttons: [ 
             {
                 extend: 'excelHtml5',
-                title: 'Reporte Estudiantes'
+                title: 'Categorias',
+                exportOptions: {
+                columns: [0,1,2]
+                }
             },
             {
                 extend: 'pdfHtml5',
-                title: 'Reporte Estudiantes',
+                title: 'Categorias',
                 exportOptions: {
-                columns: [0,1]
+                columns: [0,1,2]
                 }
             }
             ]
         });
     });
-</script>
 
-<script defer>
+    //datatable ArticleType
+    $(document).ready(function() {
+        $('#articleType').dataTable( {
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [ 
+            {
+                extend: 'excelHtml5',
+                title: 'Tipos de Articulos',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Tipos de Articulos',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            }
+            ]
+        });
+    });
+
+     //datatable measureUnit
+     $(document).ready(function() {
+        $('#measureUnit').dataTable( {
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [ 
+            {
+                extend: 'excelHtml5',
+                title: 'Unidades de Medidas',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Unidades de Medidas',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            }
+            ]
+        });
+    });
+
+    //datatable de  color
     $(document).ready(function() {
         $('#color').dataTable( {
             "language": {
@@ -51,19 +106,108 @@
             buttons: [ 
             {
                 extend: 'excelHtml5',
-                title: 'Reporte Estudiantes'
+                title: 'Colores',
+                exportOptions: {
+                columns: [0,1,2]
+                }
             },
             {
                 extend: 'pdfHtml5',
-                title: 'Reporte Estudiantes',
+                title: 'Colores',
                 exportOptions: {
-                columns: [0,1]
+                columns: [0,1,2]
+                }
+            }
+            ]
+        });
+    });
+
+
+     //datatable de  discount // se deberi acambiar por una tabla llamada  movementStock
+     $(document).ready(function() {
+        $('#movementStock').dataTable( {
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [ 
+            {
+                extend: 'excelHtml5',
+                title: 'Movimiento de Stock',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Movimiento de Stock',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            }
+            ]
+        });
+    });
+
+
+   /* $(document).ready(function() {
+        $('#movementStockJs').dataTable( {
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [ 
+            {
+                extend: 'excelHtml5',
+                title: 'Movimiento de Stock',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Movimiento de Stock',
+                exportOptions: {
+                columns: [0,1,2]
+                }
+            }
+            ]
+        });
+    }); */
+
+    //datatable articulos
+    $(document).ready(function() {
+        $('#articleTable').dataTable( {
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [ 
+            {
+                extend: 'excelHtml5',
+                title: 'Articulos',
+                exportOptions: {
+                columns: [0,1,2,3,4,5]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Articulos',
+                exportOptions: {
+                columns: [0,1,2,3,4,5]
                 }
             }
             ]
         });
     });
 </script>
+
+
+
+
+
+
+
 
 <!-- con este script se llena el stock en la 
 vista descuentos manuales para ver si es mayor a 0 
@@ -108,7 +252,7 @@ y se puede descontar -->
                         <i class="flaticon2-line"></i>
                     </buttom>
                 </td>
-                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][amount]" value="${article_discount}"></td>
+                <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][amount]" value="${article_amount}"></td>
                 <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][price]" value="${article_price}"></td>
                 <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][discount]" value="${article_discount}"></td>
                 <td><input hidden style="width: 6em" type="number" name="detalle[${article_id}][iva]" value="${iva}"></td>

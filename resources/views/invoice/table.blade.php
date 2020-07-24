@@ -43,14 +43,15 @@
                             <tr>
                                 <td>{{$invoice->id}}</td>
                                 <td>{{$invoice->number_invoice}}</td>
-                                <td>{{$invoice->person_id}}</td>
+                                <td>{{$invoice->person->name}}</td>
                                 <td>{{$invoice->date}}</td>
-                                <td>{{$invoice->payment_type_id}}</td>
-                                <td>{{$invoice->estado_id}}</td>
+                                <td>{{$invoice->paymentType->name}}</td>
+                                <td>{{$invoice->estado->name}}</td>
                                 <td>                                        
                                     {{Form::open(['route' => ['invoice.destroy', $invoice->id], 'method' => 'DELETE'])}}
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <button type="submit" class="btn btn-icon btn-outline-danger btn-shadow font-weight-bold" data-toggle="tooltip" data-theme="dark" title="Eliminar Descuento">
+                                            <a class="btn btn-icon btn-outline-success" data-toggle="tooltip" data-theme="dark" title="Ver detalle"><i class="flaticon2-list"></i></a>
+                                            <button type="submit" class="btn btn-icon btn-outline-danger btn-shadow font-weight-bold" data-toggle="tooltip" data-theme="dark" title="Eliminar Factura">
                                                 <i class="flaticon-delete-1"></i>
                                             </button>
                                         </div>

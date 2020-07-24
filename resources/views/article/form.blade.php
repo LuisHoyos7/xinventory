@@ -53,8 +53,12 @@
     </div>
   </div>
   <div class="card-footer">
-		<button type="submit" class="btn btn-warning mr-2">Guardar</button>
-		<button type="reset" class="btn btn-secondary">Cancelar</button>
+		@if(empty($article))
+      <button type="submit" class="btn btn-warning mr-2">Guardar</button>
+    @else
+      <button type="submit" class="btn btn-success mr-2">Actualizar</button>
+    @endif
+      <button type="reset" class="btn btn-secondary">Cancelar</button>
 	</div>
 </div>
 

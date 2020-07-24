@@ -40,7 +40,7 @@
 		<div id="kt_datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
             <div class="row">
                 <div class="table-responsive">
-                    <table class="table table-head-custom table-hover table-vertical-center" id="article" role="grid" aria-describedby="kt_datatable_info">
+                    <table class="table table-head-custom table-hover table-vertical-center" id="movementStock" role="grid" aria-describedby="kt_datatable_info">
 			            <thead class="thead-light">
                             <tr>
                                 <th>Id</th>
@@ -53,7 +53,6 @@
                                 @endif
                                 <th>Movimiento</th>
                                 <th>Fecha Movimiento</th>
-                                
                             </tr>
                         </thead>
                         <tbody>

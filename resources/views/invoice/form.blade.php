@@ -30,11 +30,11 @@
             </div>
             <div class="col-md-2">
                 {{ Form::label('Precio')}}
-                <input type="number" class="form-control" name="proce" id="price" id="price">
+                <input type="number" class="form-control" name="price" id="price" id="price">
             </div>
             <div class="col-md-1">
                 {{ Form::label('Cantidad')}}
-                <input type="number" class="form-control amount"   id="amount" value="1" >
+                <input type="number" class="form-control amount" name="amount"  id="amount" value="0" >
             </div>
             <div class="col-md-2">
                 {{ Form::label('Descuento')}}

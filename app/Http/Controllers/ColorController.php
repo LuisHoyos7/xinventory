@@ -76,7 +76,7 @@ class ColorController extends Controller
         $request->session()->flash('color.id', $color->id);
 
         return redirect()->route('color.index')
-            ->with('info ', 'Registro Actualizado con Exito');
+            ->with('info', 'Registro Actualizado con Exito');
     }
 
     /**
