@@ -30,8 +30,7 @@ class ArticleInvoice extends Model
         'article_id' => 'integer',
         'invoice_id' => 'integer',
         'iva_id' => 'integer',
-        'price_article' => 'decimal',
-        'discount' => 'decimal',
+
     ];
 
 

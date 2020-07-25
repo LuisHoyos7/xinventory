@@ -120,6 +120,7 @@ class DiscountController extends Controller
                     'previousStock' => $article->stock,
                     'amount' => $discount,
                     'movement' => 'ENTRADA',
+                    'description' => 'Realizado Manualmente para Aumentar el Stock',
                 ]);
 
                 $article = Article::findOrFail($id);
@@ -149,6 +150,7 @@ class DiscountController extends Controller
                     'previousStock' => $article->stock,
                     'amount' => $discount,
                     'movement' => 'SALIDA',
+                    'description' => 'Realizado Manualmente para Reducir el Stock',
                 ]);
 
                 $article = Article::findOrFail($id);

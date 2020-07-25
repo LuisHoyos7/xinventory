@@ -43,4 +43,10 @@ class Invoice extends Model
     {
         return $this->belongsTo(\App\Estado::class);
     }
+
+    
+    public function articleInvoices()
+    {
+        return $this->hasMany(\App\ArticleInvoice::class);
+    }
 }

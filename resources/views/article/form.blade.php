@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-md-4">
           {{ Form::label('Nombre')}}
-          {{ Form::text('name', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa un Nombre']) }}
+          {{ Form::text('name', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa un Nombre', 'required' => 'required']) }}
         </div>
         <div class="col-md-4">
           {{ Form::label('Precio (venta)')}}

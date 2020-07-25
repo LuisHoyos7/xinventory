@@ -6,6 +6,7 @@ use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
 use App\Article;
+use App\Discount;
 use App\Person;
 use App\ArticleInvoice;
 use Illuminate\Http\Request;
@@ -41,9 +42,7 @@ class InvoiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(InvoiceStoreRequest $request)
-    {
-       
-       
+    {  
         //se crea el encabezado de la factura 
         $invoice = Invoice::create([
             'person_id'  => $request->person_id,
@@ -55,8 +54,6 @@ class InvoiceController extends Controller
 
         foreach($request->detalle as $key=>$detalles)
         {
-           
-
             // se crean los detalles de la factura 
             // se buscan los id DE TODOS LOS ARTICULOS QUE VIENEN EN EL ARRAY detalle[]
             $article = Article::findOrFail($key);
@@ -68,8 +65,19 @@ class InvoiceController extends Controller
                 'amount_article'  => $detalles['amount'],
                 'price_article' => $detalles['price'], 
                 'discount' => $detalles['discount'], // ojo este el descuento por alguna promocion del articulo , no el descuento a una cantidad del articulo
+            ]);  
+
+            Discount::create([
+                'article_id' => $article->id,
+                'previousStock' => $article->stock,
+                'amount' =>  $detalles['amount'],
+                'movement' => 'SALIDA',
+                'description'  => 'Realizado por el Sistema - Facturacion por Ventas',
             ]);
-               
+
+            $stock_new = $article->stock - $detalles['amount'];
+
+            $article->update(['stock'=> $stock_new]);
             
         }
 

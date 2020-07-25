@@ -20,6 +20,7 @@ class CreateDiscountsTable extends Migration
             $table->foreignId('article_id')->constrained()->cascadeOnDelete();
             $table->integer('amount');
             $table->string('movement');
+            $table->string('description');
             $table->integer('previousStock');
             $table->timestamps();
         });

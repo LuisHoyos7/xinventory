@@ -200,6 +200,32 @@
             ]
         });
     });
+
+    //datatable articulos
+    $(document).ready(function() {
+        $('#invoice').dataTable( {
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [ 
+            {
+                extend: 'excelHtml5',
+                title: 'Facturas',
+                exportOptions: {
+                columns: [0,1,2,3,4,5]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Facturas',
+                exportOptions: {
+                columns: [0,1,2,3,4,5]
+                }
+            }
+            ]
+        });
+    });
 </script>
 
 
@@ -335,3 +361,29 @@ y se puede descontar -->
 
 
 
+
+<script>
+    $(document).ready(function(){
+        $('.articleInvoice').on('click', function(e) {
+
+                e.preventDefault();
+
+                //$('#loading').css('display', 'flex');
+                $('article-invoice-detail').empty();
+                var url = $(this).data('url');
+                var method = $(this).data('method');
+
+                 $.ajax({
+                     url: url,
+                     method: method,
+                     success: function(data) {
+
+                         //$('#loading').css('display', 'none');
+                         $('#article-invoice-detail').empty();
+                         $('#article-invoice-detail').append(data);
+                     }
+                 })
+
+            });
+    });
+</script>

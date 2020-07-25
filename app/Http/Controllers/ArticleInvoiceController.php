@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\ArticleInvoice;
+use App\Article;
+use App\Invoice;
 use App\Http\Requests\ArticleInvoiceStoreRequest;
 use App\Http\Requests\ArticleInvoiceUpdateRequest;
 use Illuminate\Http\Request;
@@ -86,5 +88,12 @@ class ArticleInvoiceController extends Controller
         $articleInvoice->delete();
 
         return redirect()->route('articleInvoice.index');
+    }
+
+    public function articleInvoice(Invoice $invoice)
+   {
+        $articleInvoices = $invoice->articleInvoices; 
+
+        return view('invoice.detail-article-invoice', compact('articleInvoices'));
     }
 }

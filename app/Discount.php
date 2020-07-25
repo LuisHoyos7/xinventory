@@ -16,6 +16,7 @@ class Discount extends Model
         'amount',
         'previousStock',
         'movement',
+        'description',
     ];
 
     /**

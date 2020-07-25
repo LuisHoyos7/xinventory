@@ -51,7 +51,8 @@ class ArticleController extends Controller
 
         $request->session()->flash('article.id', $article->id);
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')
+            ->with('success' , 'Articulo creado Con Exito');
     }
 
     /**
@@ -93,7 +94,8 @@ class ArticleController extends Controller
 
         $request->session()->flash('article.id', $article->id);
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')
+            ->with('info' , 'Articulo creado Con Exito');
     }
 
     /**
@@ -105,23 +107,9 @@ class ArticleController extends Controller
     {
         $article->delete();
 
-        return redirect()->route('article.index');
-    }
-
-
-    public function addStock(Article $article, Request $request)
-    {
-        $stock = $article->stock; 
-        
-        $sumStock = $stock + $request->stock;
-
-        $article->update(['stock' =>  $sumStock]);
-
-        $request->session()->flash('article.id', $article->id);
-
         return redirect()->route('article.index')
-            ->with('success', 'Se han Agregado '.$request->stock.' Cantidades a este Articulo');
-        
-        
+            ->with('error' , 'Articulo Eliminado Con Exito');
     }
+
+
 }

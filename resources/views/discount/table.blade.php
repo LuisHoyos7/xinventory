@@ -52,6 +52,7 @@
                                 <th>Cantidad Agregada</th>
                                 @endif
                                 <th>Movimiento</th>
+                                <th>Descripcion</th>
                                 <th>Fecha Movimiento</th>
                             </tr>
                         </thead>
@@ -63,6 +64,7 @@
                                 <td>{{$discount->previousStock}}</td>
                                 <td>{{$discount->amount}}</td>
                                 <td>{{$discount->movement}}</td>
+                                <td>{{$discount->description}}</td>
                                 <td>{{$discount->created_at}}</td>                                     
                                     {{--  OJO MIRAR SI ES VIABLE ELIMINAR EL DESCUENTO O SUMA AL STOCK Y DEVOLVER LOS VALORES ANTERIORES
                                         

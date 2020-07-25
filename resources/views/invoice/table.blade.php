@@ -25,8 +25,8 @@
 		<!--begin: Datatable-->
 		<div id="kt_datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
             <div class="row">
-                <div class="table-responsive">
-                    <table class="table table-head-custom table-hover table-vertical-center" id="article" role="grid" aria-describedby="kt_datatable_info">
+                <div class="table-responsive  table-sm">
+                    <table class="table table-head-custom table-hover table-vertical-center table-sm" id="invoice" role="grid" aria-describedby="kt_datatable_info">
 			            <thead class="thead-light">
                             <tr>
                                 <th>Id</th>
@@ -50,7 +50,13 @@
                                 <td>                                        
                                     {{Form::open(['route' => ['invoice.destroy', $invoice->id], 'method' => 'DELETE'])}}
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <a class="btn btn-icon btn-outline-success" data-toggle="tooltip" data-theme="dark" title="Ver detalle"><i class="flaticon2-list"></i></a>
+                                            <a href="" class="btn btn-icon btn-outline-warning">Pdf</a>
+                                            <button type="button" class="btn btn-icon btn-outline-success articleInvoice"
+                                                    data-toggle="modal" data-target="#exampleModalCustomScrollable"
+                                                    data-url="{{route('article.invoice', $invoice->id)}}"
+                                                    data-method="GET">
+                                                    <i class="flaticon2-list"></i>
+                                            </button>
                                             <button type="submit" class="btn btn-icon btn-outline-danger btn-shadow font-weight-bold" data-toggle="tooltip" data-theme="dark" title="Eliminar Factura">
                                                 <i class="flaticon-delete-1"></i>
                                             </button>
@@ -66,3 +72,27 @@
 	    </div><!--end: Datatable-->
     </div>
 </div>
+
+
+<!-- Modal detalles facturas llenado mediant AJAX-->
+<div class="modal fade" id="exampleModalCustomScrollable" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Destalles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="article-invoice-detail" data-scroll="true" data-height="300">
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
