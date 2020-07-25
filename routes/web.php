@@ -37,6 +37,7 @@ Route::resource('estado', 'EstadoController');
 
 Route::resource('invoice', 'InvoiceController');
 Route::get('invoice/getArticleStock/{article}', 'DiscountController@getArticleStock');
+Route::get('pdf', 'InvoiceController@invoicePdf')->name('invoice.pdf');
 
 
 Route::resource('article-invoice', 'ArticleInvoiceController');

@@ -50,7 +50,7 @@
                                 <td>                                        
                                     {{Form::open(['route' => ['invoice.destroy', $invoice->id], 'method' => 'DELETE'])}}
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <a href="" class="btn btn-icon btn-outline-warning">Pdf</a>
+                                            <a href="{{route('invoice.pdf')}}" class="btn btn-icon btn-outline-warning">Pdf</a>
                                             <button type="button" class="btn btn-icon btn-outline-success articleInvoice"
                                                     data-toggle="modal" data-target="#exampleModalCustomScrollable"
                                                     data-url="{{route('article.invoice', $invoice->id)}}"

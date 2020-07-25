@@ -8,6 +8,7 @@ use App\Invoice;
 use App\Article;
 use App\Discount;
 use App\Person;
+use PDF;
 use App\ArticleInvoice;
 use Illuminate\Http\Request;
 
@@ -131,5 +132,10 @@ class InvoiceController extends Controller
         $invoice->delete();
 
         return redirect()->route('invoice.index');
+    }
+
+    public function invoicePdf(){
+        $pdf = \PDF::loadView('invoice.invoice-pdf');
+        return $pdf->download('factura.pdf');
     }
 }
