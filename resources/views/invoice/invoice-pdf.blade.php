@@ -349,7 +349,7 @@ body { margin-left: 0.5in; margin-right: 0.5in; margin-top: 0.5in; margin-bottom
           </tr>
           <tr class="row9">
             <td class="column0 style6 null"></td>
-            <td class="column1 style80 s style62" rowspan="19">INVOICE</td>
+       
             <td class="column2 style21 s">&lt;Contact Name&gt;</td>
             <td class="column3 style1 null"></td>
             <td class="column4 style69 s style62" colspan="2">&lt;Name / Dept&gt;</td>

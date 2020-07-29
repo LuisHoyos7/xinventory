@@ -23,3 +23,4 @@
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="{{ asset('metronic/dist/assets/media/logos/favicon.ico') }}" />
 </head>
+
