@@ -7,7 +7,7 @@ use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
 use App\Article;
 use App\Discount;
-use App\Person;
+use App\Person; 
 use PDF;
 use App\ArticleInvoice;
 use Illuminate\Http\Request;
@@ -20,9 +20,22 @@ class InvoiceController extends Controller
      */
     public function index(Request $request)
     {
-        $invoices = Invoice::all();
+        if ($request->invoiceType == 'VENTA'){
 
-        return view('invoice.index', compact('invoices'));
+            $invoiceType = 'VENTA';
+
+            $invoices = Invoice::where('invoiceType', 'VENTA');
+
+            return view('invoice.index', compact('invoices','invoiceType'));
+        
+        }else{
+
+            $invoiceType = 'COMPRA';
+
+            $invoices = Invoice::where('invoiceType', 'COMPRA');
+
+            return view('invoice.index', compact('invoices','invoiceType'));
+        }
     }
 
     /**
@@ -31,11 +44,13 @@ class InvoiceController extends Controller
      */
     public function create(Request $request)
     {
-        $people = Person::all();
+        $invoiceType = $request->invoiceType;
+
+        $people = Person::pluck('name', 'id');
 
         $articles = Article::all();
 
-        return view('invoice.create', compact('articles', 'people'));
+        return view('invoice.create', compact('articles', 'people','invoiceType'));
     }
 
     /**

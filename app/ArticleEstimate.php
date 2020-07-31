@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class ArticleEstimate extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,10 +12,13 @@ class Image extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
         'article_id',
-        'invoice_id',
         'estimate_id',
+        'iva_id',
+        'amount_article',
+        'price_article',
+        'discount',
+        'interest',
     ];
 
     /**
@@ -26,8 +29,11 @@ class Image extends Model
     protected $casts = [
         'id' => 'integer',
         'article_id' => 'integer',
-        'invoice_id' => 'integer',
         'estimate_id' => 'integer',
+        'iva_id' => 'integer',
+        'price_article' => 'decimal',
+        'discount' => 'decimal',
+        'interest' => 'decimal',
     ];
 
 
@@ -36,13 +42,13 @@ class Image extends Model
         return $this->belongsTo(\App\Article::class);
     }
 
-    public function invoice()
-    {
-        return $this->belongsTo(\App\Invoice::class);
-    }
-
     public function estimate()
     {
         return $this->belongsTo(\App\Estimate::class);
+    }
+
+    public function iva()
+    {
+        return $this->belongsTo(\App\Iva::class);
     }
 }

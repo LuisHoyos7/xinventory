@@ -59,14 +59,14 @@ class ImageControllerTest extends TestCase
      */
     public function store_saves_and_redirects()
     {
-        $image = $this->faker->word;
+        $name = $this->faker->name;
 
         $response = $this->post(route('image.store'), [
-            'image' => $image,
+            'name' => $name,
         ]);
 
         $images = Image::query()
-            ->where('image', $image)
+            ->where('name', $name)
             ->get();
         $this->assertCount(1, $images);
         $image = $images->first();
@@ -124,14 +124,18 @@ class ImageControllerTest extends TestCase
     public function update_redirects()
     {
         $image = factory(Image::class)->create();
-        $image = $this->faker->word;
+        $name = $this->faker->name;
 
         $response = $this->put(route('image.update', $image), [
-            'image' => $image,
+            'name' => $name,
         ]);
+
+        $image->refresh();
 
         $response->assertRedirect(route('image.index'));
         $response->assertSessionHas('image.id', $image->id);
+
+        $this->assertEquals($name, $image->name);
     }
 
 

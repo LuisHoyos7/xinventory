@@ -12,17 +12,10 @@ class Estimate extends Model
      * @var array
      */
     protected $fillable = [
-        'course_id',
-        'work_type_id',
-        'customer_id',
-        'delivery_date',
-        'delivery_hour',
-        'description',
-        'theme',
-        'sheets_number',
-        'standard',
-        'other_course',
-        'other_work_type',
+        'number_estimate',
+        'person_id',
+        'estado_id',
+        'date',
     ];
 
     /**
@@ -32,24 +25,18 @@ class Estimate extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'course_id' => 'integer',
-        'work_type_id' => 'integer',
-        'customer_id' => 'integer',
+        'person_id' => 'integer',
+        'estado_id' => 'integer',
     ];
 
 
-    public function course()
+    public function person()
     {
-        return $this->belongsTo(\App\Course::class);
+        return $this->belongsTo(\App\Person::class);
     }
 
-    public function workType()
+    public function estado()
     {
-        return $this->belongsTo(\App\WorkType::class);
-    }
-
-    public function customer()
-    {
-        return $this->belongsTo(\App\Customer::class);
+        return $this->belongsTo(\App\Estado::class);
     }
 }

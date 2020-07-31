@@ -1,70 +1,33 @@
 created:
-    - database/migrations/2020_07_16_000423_create_people_table.php
-    - database/migrations/2020_07_16_000424_create_payment_types_table.php
-    - database/migrations/2020_07_16_000425_create_ivas_table.php
-    - database/migrations/2020_07_16_000426_create_estados_table.php
-    - database/migrations/2020_07_16_000427_create_invoices_table.php
-    - database/migrations/2020_07_16_000428_create_article_invoices_table.php
-    - app/Person.php
-    - app/PaymentType.php
-    - app/Iva.php
-    - app/Estado.php
-    - app/Invoice.php
-    - app/ArticleInvoice.php
-    - database/factories/PersonFactory.php
-    - database/factories/PaymentTypeFactory.php
-    - database/factories/IvaFactory.php
-    - database/factories/EstadoFactory.php
-    - database/factories/InvoiceFactory.php
-    - database/factories/ArticleInvoiceFactory.php
-    - app/Http/Controllers/PersonController.php
-    - app/Http/Controllers/PaymentTypeController.php
-    - app/Http/Controllers/IvaController.php
-    - app/Http/Controllers/EstadoController.php
-    - app/Http/Controllers/InvoiceController.php
-    - app/Http/Controllers/ArticleInvoiceController.php
-    - app/Http/Requests/PersonStoreRequest.php
-    - app/Http/Requests/PersonUpdateRequest.php
-    - app/Http/Requests/PaymentTypeStoreRequest.php
-    - app/Http/Requests/PaymentTypeUpdateRequest.php
-    - app/Http/Requests/IvaStoreRequest.php
-    - app/Http/Requests/IvaUpdateRequest.php
-    - app/Http/Requests/EstadoStoreRequest.php
-    - app/Http/Requests/EstadoUpdateRequest.php
-    - app/Http/Requests/InvoiceStoreRequest.php
-    - app/Http/Requests/InvoiceUpdateRequest.php
-    - app/Http/Requests/ArticleInvoiceStoreRequest.php
-    - app/Http/Requests/ArticleInvoiceUpdateRequest.php
-    - resources/views/person/index.blade.php
-    - resources/views/person/create.blade.php
-    - resources/views/person/show.blade.php
-    - resources/views/person/edit.blade.php
-    - resources/views/paymentType/index.blade.php
-    - resources/views/paymentType/create.blade.php
-    - resources/views/paymentType/show.blade.php
-    - resources/views/paymentType/edit.blade.php
-    - resources/views/iva/index.blade.php
-    - resources/views/iva/create.blade.php
-    - resources/views/iva/show.blade.php
-    - resources/views/iva/edit.blade.php
-    - resources/views/estado/index.blade.php
-    - resources/views/estado/create.blade.php
-    - resources/views/estado/show.blade.php
-    - resources/views/estado/edit.blade.php
-    - resources/views/invoice/index.blade.php
-    - resources/views/invoice/create.blade.php
-    - resources/views/invoice/show.blade.php
-    - resources/views/invoice/edit.blade.php
-    - resources/views/articleInvoice/index.blade.php
-    - resources/views/articleInvoice/create.blade.php
-    - resources/views/articleInvoice/show.blade.php
-    - resources/views/articleInvoice/edit.blade.php
-    - tests/Feature/Http/Controllers/PersonControllerTest.php
-    - tests/Feature/Http/Controllers/PaymentTypeControllerTest.php
-    - tests/Feature/Http/Controllers/IvaControllerTest.php
-    - tests/Feature/Http/Controllers/EstadoControllerTest.php
-    - tests/Feature/Http/Controllers/InvoiceControllerTest.php
-    - tests/Feature/Http/Controllers/ArticleInvoiceControllerTest.php
+    - database/migrations/2020_07_30_005714_create_estimates_table.php
+    - database/migrations/2020_07_30_005715_create_article_estimates_table.php
+    - database/migrations/2020_07_30_005716_create_images_table.php
+    - app/Estimate.php
+    - app/ArticleEstimate.php
+    - app/Image.php
+    - database/factories/EstimateFactory.php
+    - database/factories/ArticleEstimateFactory.php
+    - database/factories/ImageFactory.php
+    - app/Http/Controllers/EstimateController.php
+    - app/Http/Controllers/ImageController.php
+    - app/Http/Controllers/ArticleEstimateController.php
+    - app/Http/Requests/ArticleEstimateStoreRequest.php
+    - app/Http/Requests/ArticleEstimateUpdateRequest.php
+    - resources/views/estimate/index.blade.php
+    - resources/views/estimate/create.blade.php
+    - resources/views/estimate/show.blade.php
+    - resources/views/estimate/edit.blade.php
+    - resources/views/image/index.blade.php
+    - resources/views/image/create.blade.php
+    - resources/views/image/show.blade.php
+    - resources/views/image/edit.blade.php
+    - resources/views/articleEstimate/index.blade.php
+    - resources/views/articleEstimate/create.blade.php
+    - resources/views/articleEstimate/show.blade.php
+    - resources/views/articleEstimate/edit.blade.php
+    - tests/Feature/Http/Controllers/EstimateControllerTest.php
+    - tests/Feature/Http/Controllers/ImageControllerTest.php
+    - tests/Feature/Http/Controllers/ArticleEstimateControllerTest.php
 updated:
     - routes/web.php
 models:
@@ -72,8 +35,8 @@ models:
     Course: { name: string, category_id: biginteger }
     Customer: { name: string, mail: string, mobile: integer, user_id: biginteger }
     Cutomer: {  }
-    Estimate: { course_id: biginteger, work_type_id: biginteger, customer_id: biginteger, delivery_date: date, delivery_hour: time, description: 'string:2000 nullable', theme: 'string nullable', sheets_number: 'string nullable', standard: 'string nullable', other_course: 'string nullable', other_work_type: 'string nullable' }
-    Image: { path: string, estimate_id: biginteger }
+    Estimate: { number_estimate: integer, person_id: 'id foreign', estado_id: 'id foreign', date: date }
+    Image: { name: varchar(10000), article_id: 'id foreign nullable', invoice_id: 'id foreign nullable', estimate_id: 'id foreign nullable' }
     ServiceCourse: {  }
     ServiceType: { name: string }
     User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
@@ -89,3 +52,4 @@ models:
     Estado: { name: string, description: string }
     Invoice: { number_invoice: integer, person_id: 'id foreign', payment_type_id: 'id foreign', estado_id: 'id foreign', date: date }
     ArticleInvoice: { article_id: 'id foreign', invoice_id: 'id foreign', iva_id: 'id foreign', amount_article: integer, price_article: decimal, discount: decimal }
+    ArticleEstimate: { article_id: 'id foreign', estimate_id: 'id foreign', iva_id: 'id foreign', amount_article: integer, price_article: decimal, discount: decimal, interest: decimal }

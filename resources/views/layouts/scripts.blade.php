@@ -15,7 +15,21 @@
 		<script src="{{ asset('metronic/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.4') }}"></script>
 		<script src="{{ asset('metronic/dist/assets/js/pages/widgets.js?v=7.0.4') }}"></script>
 		<script src="{{ asset('metronic/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.5') }}"></script>
-		<script src="{{ asset('metronic/dist/assets/js/pages/crud/datatables/basic/headers.js?v=7.0.5') }}"></script>
+        <script src="{{ asset('metronic/dist/assets/js/pages/crud/datatables/basic/headers.js?v=7.0.5') }}"></script>
+        <script src="{{ asset('metronic/dist/assets/js/pages/crud/forms/widgets/select2.js?v=7.0.7') }}"></script>
+        <script>
+        $("#article").select2({
+			placeholder: "Selecciona un Articulo",
+			language: "es",
+			allowClear: true,
+		});
+
+        $("#person").select2({
+			placeholder: "Selecciona una Opcion",
+			language: "es",
+			allowClear: true,
+		});
+        </script>
 		
 <script defer>
     //datatable category
@@ -228,19 +242,13 @@
     });
 </script>
 
-
-
-
-
-
-
-
 <!-- con este script se llena el stock en la 
 vista descuentos manuales para ver si es mayor a 0 
 y se puede descontar -->
 
 <script>
-
+    $('#div-article-js').hide()
+    $('#buttom-article-js').hide()
     //peticion ajax para llenar el STOCK 
     $('#article').on('change', function (e) {
         var article_id =  $("#article option:selected").val();
@@ -258,10 +266,17 @@ y se puede descontar -->
     })
     $('#addInvoice').on('click', function (e) {
         e.preventDefault();
+        var article_stock = $('#stock').val();
+        var article_amount = $("#amount").val();
+        if (article_stock <= 0 || article_stock <  article_amount){
+            alert('lo sentimos el stock esta en cero o Excede la cantidad en Almacen')
+        }
+        else{
+        $('#div-article-js').show()
+        $('#buttom-article-js').show()
         var article_id = $("#article option:selected").val();
         var article_name = $("#article option:selected").text();
         var article_price = $("#price").val();
-        var article_amount = $("#amount").val();
         var article_discount = $("#discount").val();
         var iva = $("#iva").val();
         var total_price = parseFloat(article_amount) * parseFloat(article_price);
@@ -330,11 +345,11 @@ y se puede descontar -->
  $('#total').html(total_buy.toFixed(2));
 
      
-
+}
         
     })
   
-     
+
     //en este metodo se van agregando los articulos en la vista de descuentos manuales 
     // que se van a descontar con su respectiva cantidad a descontar, de igual manera 
     // se envia un array detalle[] al controlador con cada uno de los articulos a descontar

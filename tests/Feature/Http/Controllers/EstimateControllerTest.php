@@ -2,7 +2,9 @@
 
 namespace Tests\Feature\Http\Controllers;
 
+use App\Estado;
 use App\Estimate;
+use App\Person;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use JMac\Testing\Traits\AdditionalAssertions;
@@ -59,14 +61,23 @@ class EstimateControllerTest extends TestCase
      */
     public function store_saves_and_redirects()
     {
-        $estimate = $this->faker->word;
+        $number_estimate = $this->faker->numberBetween(-10000, 10000);
+        $person = factory(Person::class)->create();
+        $estado = factory(Estado::class)->create();
+        $date = $this->faker->date();
 
         $response = $this->post(route('estimate.store'), [
-            'estimate' => $estimate,
+            'number_estimate' => $number_estimate,
+            'person_id' => $person->id,
+            'estado_id' => $estado->id,
+            'date' => $date,
         ]);
 
         $estimates = Estimate::query()
-            ->where('estimate', $estimate)
+            ->where('number_estimate', $number_estimate)
+            ->where('person_id', $person->id)
+            ->where('estado_id', $estado->id)
+            ->where('date', $date)
             ->get();
         $this->assertCount(1, $estimates);
         $estimate = $estimates->first();
@@ -124,14 +135,27 @@ class EstimateControllerTest extends TestCase
     public function update_redirects()
     {
         $estimate = factory(Estimate::class)->create();
-        $estimate = $this->faker->word;
+        $number_estimate = $this->faker->numberBetween(-10000, 10000);
+        $person = factory(Person::class)->create();
+        $estado = factory(Estado::class)->create();
+        $date = $this->faker->date();
 
         $response = $this->put(route('estimate.update', $estimate), [
-            'estimate' => $estimate,
+            'number_estimate' => $number_estimate,
+            'person_id' => $person->id,
+            'estado_id' => $estado->id,
+            'date' => $date,
         ]);
+
+        $estimate->refresh();
 
         $response->assertRedirect(route('estimate.index'));
         $response->assertSessionHas('estimate.id', $estimate->id);
+
+        $this->assertEquals($number_estimate, $estimate->number_estimate);
+        $this->assertEquals($person->id, $estimate->person_id);
+        $this->assertEquals($estado->id, $estimate->estado_id);
+        $this->assertEquals($date, $estimate->date);
     }
 
 
