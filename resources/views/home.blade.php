@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!--begin::Dashboard-->
     <!--begin::Row-->
     <div class="row">
@@ -147,9 +146,6 @@
             </div>
             <!--end::Mixed Widget 1-->
         </div>
-
-       
     </div>
     <!--end::Row-->
-  
 @endsection
