@@ -45,29 +45,27 @@
     </div>
   </div>
 
-<div class="card-body py-0 pb-40 px-40">
-    <!--begin: Datatable-->
-    
-    <table id="movementStockJs" class="table table-discount table-head-custom table-hover table-vertical-center">
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th>Articulo</th>
-                <th></th>
-                <th></th>
-                @if(!empty($idStock))
-                    <th>Restar cantidad</th>
-                @elseif(empty($idStock))
-                    <th>Sumar Cantidad</th>
-                @endif
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-</div>
+    <div class="card-body py-0 pb-40 px-40">
+        <table id="movementStockJs" class="table table-discount table-head-custom table-hover table-vertical-center">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Articulo</th>
+                    <th></th>
+                    <th></th>
+                    @if(!empty($idStock))
+                        <th>Restar cantidad</th>
+                    @elseif(empty($idStock))
+                        <th>Sumar Cantidad</th>
+                     @endif
+                </tr>
+            </thead>
+            <tbody>
+                <!--llenado con JS -->
+            </tbody>
+        </table>
+    </div>
     <div class="card-footer">
 		<button type="submit" class="btn  btn-warning mr-2">Guardar</button>
 		<button type="reset" class="btn btn-secondary">Cancelar</button>

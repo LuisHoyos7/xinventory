@@ -12,8 +12,7 @@
   </div>
   <div class="card-body">
 		<div class="form-group form-group-last">
-
-      <div class="row">
+      <div class="row mt-10">
         <div class="col-md-4">
           {{ Form::label('Nombre')}}
           {{ Form::text('name', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa un Nombre', 'required' => 'required']) }}
@@ -26,9 +25,8 @@
           {{ Form::label('Stock')}}
           {{ Form::number('stock', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa una Cantidad']) }}
         </div>
-      </div><br>
-
-      <div class="row">
+      </div>
+      <div class="row mt-10">
         <div class="col-md-4">
           {{ Form::label('Categoria')}}
           {{ Form::select('category_id',$category, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione']) }}
@@ -41,15 +39,13 @@
           {{ Form::label('Medida')}}
           {{ Form::select('measure_unit_id',$measureUnit, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione']) }}
         </div>
-      </div><br>
-
-      <div class="row">
+      </div>
+      <div class="row mt-10">
         <div class="col-md-6 offset-3">
           {{ Form::label('Color')}}
           {{ Form::select('color_id',$color, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione']) }}
         </div>
       </div>
-
     </div>
   </div>
   <div class="card-footer">
@@ -61,7 +57,6 @@
       <button type="reset" class="btn btn-secondary">Cancelar</button>
 	</div>
 </div>
-
 {!! Form::close() !!}
 
 

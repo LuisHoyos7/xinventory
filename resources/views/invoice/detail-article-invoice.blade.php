@@ -1,6 +1,5 @@
 <div class="card card-custom gutter-b">
 	<div class="card-body mb-10 px-20">
-		<!--begin: Datatable-->
 		<div id="kt_datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
             <div class="row">
                 <div class="table-responsive table-sm">
@@ -32,6 +31,6 @@
                     </table>
                 </div>
             </div>
-	    </div><!--end: Datatable-->
+	    </div>
     </div>
 </div>

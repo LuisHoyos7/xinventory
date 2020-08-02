@@ -8,21 +8,21 @@
             Crear Factura de Compra
             @endif
         </h3>
-        <div class="col-md-8">
+        <div class="col-md-8 my-10">
             {{ Form::label('')}}
             {{ Form::select('person_id',$people, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione', 'required', 'id'=>'person','my' =>'8']) }}
         </div>
-  </div><br>
-  <div class="card-body">
+  </div>
+  <div class="card-body mt-10">
 	<div class="form-group form-group-last">
         <div class="row">
             <div class="col-md-4">
                 {{ Form::label('Articulo')}}
                 <select name="article_id" id="article" class="form-control">
                     <option placeholder="Seleccione un Articulo"></option>
-                    @foreach ($articles as $article)
-                        <option  value="{{$article->id}}"> {{$article->name}} - {{$article->color->name}}</option>
-                    @endforeach
+                        @foreach ($articles as $article)
+                            <option  value="{{$article->id}}"> {{$article->name}} - {{$article->color->name}}</option>
+                        @endforeach
                 </select>
             </div>
             <div class="col-md-1">
@@ -55,8 +55,7 @@
     </div>
   </div>
 
-<div class="card-body py-0 pb-40 px-10" id="div-article-js">
-    <!--begin: Datatable-->
+  <div class="card-body py-0 pb-40 px-10" id="div-article-js">
     <table class="table table-discount table-head-custom table-hover table-vertical-center" id="miTabla">
         <thead>
             <tr>
@@ -74,15 +73,15 @@
             </tr>
         </thead>
         <tbody>
-
+            <!--llenaod con JS-->
         </tbody>
         <tfoot class="mt-50">
             <tr class="py-30">
                 <td><h4>Subtotal</h4></td>
                 <td>$<b id="totalPrice"></b></td>
-                <td><b id="totalAmount"></b></td>
+                <td><b  id="totalAmount"></b></td>
                 <td>$<b id="totalDiscount"></b</td>
-                <td><b id="totalIva"></b</td>
+                <td><b  id="totalIva"></b</td>
                 <td>$<b id="total"></b></td>
                 <td></td>
                 <td></td>
@@ -92,7 +91,7 @@
             </tr>
         </tfoot>
     </table>
-</div>
+    </div>
     <div class="card-footer" id="buttom-article-js">
 		<button type="submit" class="btn  btn-warning mr-2">Guardar</button>
 		<button type="reset" class="btn btn-secondary">Cancelar</button>
