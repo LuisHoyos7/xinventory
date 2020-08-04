@@ -17,10 +17,10 @@ $('#addInvoice').on('click', function (e) {
     e.preventDefault();
     var article_stock = $('#stock').val();
     var article_amount = $("#amount").val();
-    if (article_stock <= 0 || article_stock <  article_amount){
+    /* if (article_stock <= 0 || article_stock <  article_amount){
         alert('lo sentimos el stock esta en cero o Excede la cantidad en Almacen')
     }
-    else{
+    else{ */
     $('#div-article-js').show()
     $('#buttom-article-js').show()
     var article_id = $("#article option:selected").val();
@@ -79,7 +79,7 @@ $('#addInvoice').on('click', function (e) {
     $('#totalDiscount').html(total_discount.toFixed(2));
     $('#totalIva').html(total_iva.toFixed(2));
     $('#total').html(total_buy.toFixed(2));
-    }
+    
     
 })
 //en este metodo se van agregando los articulos en la vista de descuentos manuales 

@@ -17,13 +17,13 @@
         <script src="{{ asset('metronic/dist/assets/js/pages/crud/forms/widgets/select2.js?v=7.0.7') }}"></script>
        
 <!--script de los datatables-->
-<script src="dataTables.js"></script>
+<script src="{{ asset ('dataTables.js') }}"></script>
 
 <!-- con este script se llena el stock en la  vista descuentos manuales para ver si es mayor a 0 y se puede descontar -->
-<script src="invoices.js"></script>
+<script src="{{ asset ('invoices.js') }}"></script>
 
 <!--script selects2-->
-<script src="select2.js"></script>
+<script src="{{ asset ('select2.js') }}"></script>
 
 <script>
     $(document).ready(function(){

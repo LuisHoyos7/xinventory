@@ -11,7 +11,7 @@
             @elseif(empty($idStock))
                 Adiciones al Stock de Articulos
             @endif
-		</h3>
+		</h3> 
   </div>
   <div class="card-body">
 	<div class="form-group form-group-last">
