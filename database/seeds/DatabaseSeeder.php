@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticleTypesTableSeeder::class);
         $this->call(MeasureUnitsTableSeeder::class);
         $this->call(ColorsTableSeeder::class);
+        $this->call(ArticlesTableSeeder::class);
     }
 }
