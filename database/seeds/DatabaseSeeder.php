@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RolesAndPermissionsSeeder::class);
         factory(\App\Category::class, 5)->create();
+        $this->call(PersonTableSeeder::class);
     }
 }
