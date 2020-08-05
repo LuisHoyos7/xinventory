@@ -20,7 +20,7 @@ class CreateInvoicesTable extends Migration
             $table->foreignId('payment_type_id')->constrained()->cascadeOnDelete();
             $table->foreignId('estado_id')->constrained()->cascadeOnDelete();
             $table->date('date');
-            $table->invoiceType('varchar');
+            $table->string('invoice_type');
             $table->timestamps();
         });
     }
