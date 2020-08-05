@@ -28,7 +28,7 @@ class PersonStoreRequest extends FormRequest
             'direction' => 'required|string',
             'mobile' => 'string',
             'mail' => 'string',
-            'nuip' => 'string',
+            'dni' => 'string',
         ];
     }
 }

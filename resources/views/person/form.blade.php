@@ -14,26 +14,26 @@
 		<div class="form-group form-group-last">
       <div class="row">
         <div class="col-md-4">
-          {{ Form::label('Nombre')}}
-          {{ Form::text('name', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa un Nombre']) }}
+          {{ Form::label('Nombres y apellidos')}}
+          {{ Form::text('name', null, ['class'  => 'form-control', 'placeholder' => 'Ingresar nombres y apellidos']) }}
         </div>
         <div class="col-md-4">
-          {{ Form::label('Direccion')}}
-          {{ Form::text('direction', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa una direccion']) }}
+          {{ Form::label('Dirección')}}
+          {{ Form::text('direction', null, ['class'  => 'form-control', 'placeholder' => 'Ingresar dirección']) }}
         </div>
         <div class="col-md-4">
           {{ Form::label('Celular')}}
-          {{ Form::text('mobile', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa una Celular']) }}
+          {{ Form::text('mobile', null, ['class'  => 'form-control', 'placeholder' => 'Ingresar número celular']) }}
         </div>
       </div>
       <div class="row">
         <div class="col-md-4">
-          {{ Form::label('Correo Electronico')}}
-          {{ Form::text('mail', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa una correo']) }}
+          {{ Form::label('Correo electrónico')}}
+          {{ Form::text('mail', null, ['class'  => 'form-control', 'placeholder' => 'Ingresar correo electrónico']) }}
         </div>
         <div class="col-md-3">
-          {{ Form::label('Identificacion')}}
-          {{ Form::text('nuip', null, ['class'  => 'form-control', 'placeholder' => 'Ingesa una identificacion']) }}
+          {{ Form::label('Identificación')}}
+          {{ Form::text('dni', null, ['class'  => 'form-control', 'placeholder' => 'Ingresar identificación']) }}
         </div>
        <div class="col-md-5">
           <div class="col-9 col-form-label py-12">

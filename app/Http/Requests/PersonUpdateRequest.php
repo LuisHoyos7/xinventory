@@ -31,7 +31,7 @@ class PersonUpdateRequest extends FormRequest
             'is_employed' => '',
             'is_worker' => '',
             'is_provider' => '',
-            'nuip' => 'string',
+            'dni' => 'string',
         ];
     }
 }

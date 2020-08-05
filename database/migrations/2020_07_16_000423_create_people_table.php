@@ -15,6 +15,7 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
+            $table->string('dni');
             $table->string('name');
             $table->string('direction');
             $table->string('mobile')->nullable();
@@ -22,7 +23,6 @@ class CreatePeopleTable extends Migration
             $table->boolean('is_customer')->nullable();
             $table->boolean('is_worker')->nullable();
             $table->boolean('is_provider')->nullable();
-            $table->string('nuip')->nullable();
             $table->timestamps();
         });
     }

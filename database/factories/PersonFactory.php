@@ -14,6 +14,6 @@ $factory->define(Person::class, function (Faker $faker) {
         'is_employed' => $faker->boolean,
         'is_worker' => $faker->boolean,
         'is_provider' => $faker->boolean,
-        'nuip' => $faker->word,
+        'dni' => $faker->word,
     ];
 });

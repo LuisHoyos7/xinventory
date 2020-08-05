@@ -19,7 +19,7 @@ class Person extends Model
         'is_customer',
         'is_worker',
         'is_provider',
-        'nuip',
+        'dni',
     ];
 
     /**

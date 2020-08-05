@@ -45,7 +45,7 @@
                                 <td>{{$person->id}}</td>
                                 <td>{{$person->name}}</td>
                                 <td>{{$person->mobile}}</td>
-                                <td>{{$person->nuip}}</td>
+                                <td>{{$person->dni}}</td>
                                 @if($person->is_customer == true)
                                 <td>Si</td>
                                 @endif
