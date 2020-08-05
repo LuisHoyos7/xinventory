@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Color::class, function (Faker $faker) {
     return [
-        'Code' => $faker->numberBetween(-10000, 10000),
+        'code' => $faker->numberBetween(-10000, 10000),
         'name' => $faker->word,
     ];
 });
