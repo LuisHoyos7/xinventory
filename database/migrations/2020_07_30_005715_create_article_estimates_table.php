@@ -19,9 +19,9 @@ class CreateArticleEstimatesTable extends Migration
             $table->foreignId('estimate_id')->constrained()->cascadeOnDelete();
             $table->foreignId('iva_id')->constrained()->cascadeOnDelete();
             $table->integer('amount_article');
-            $table->decimal('price_article');
-            $table->decimal('discount');
-            $table->decimal('interest');
+            $table->decimal('price_article', 18, 2);
+            $table->decimal('discount', 18, 2);
+            $table->decimal('interest', 18, 2);
             $table->timestamps();
         });
     }

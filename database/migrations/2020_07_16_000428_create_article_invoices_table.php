@@ -19,8 +19,8 @@ class CreateArticleInvoicesTable extends Migration
             $table->foreignId('invoice_id')->constrained()->cascadeOnDelete();
             $table->foreignId('iva_id')->constrained()->cascadeOnDelete();
             $table->integer('amount_article');
-            $table->decimal('price_article');
-            $table->decimal('discount');
+            $table->decimal('price_article', 18, 2);
+            $table->decimal('discount', 18, 2);
             $table->timestamps();
         });
     }

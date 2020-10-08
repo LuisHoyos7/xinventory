@@ -62,9 +62,9 @@ class InvoiceController extends Controller
         //se crea el encabezado de la factura 
         $invoice = Invoice::create([
             'person_id'  => $request->person_id,
-            'date'       => date('d-m-y'),
+            'date'       => date('Y-m-d'), // 'd-m-y'
             'payment_type_id' => 1,
-            'estado_id'   =>2,
+            'estado_id'   => 2,
             'number_invoice' => 1,
         ]);
 

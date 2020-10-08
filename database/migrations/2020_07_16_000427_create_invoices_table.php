@@ -16,11 +16,12 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->integer('number_invoice');
-            $table->foreignId('person_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('payment_type_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('estado_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('person_id');
+            $table->foreign('person_id')->references('id')->on('people');
+            $table->unsignedBigInteger('payment_type_id');
+            $table->integer('estado_id')->unsigned();
             $table->date('date');
-            $table->string('invoice_type');
+            $table->string('invoice_type')->default(1);
             $table->timestamps();
         });
     }

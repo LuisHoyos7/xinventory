@@ -28,6 +28,7 @@ Route::post('discount/descuentos', 'DiscountController@addStock')->name('discoun
 Route::get('discount/getArticleStock/{article}', 'DiscountController@getArticleStock');
 
 Route::resource('person', 'PersonController');
+Route::get('customers-list', 'CustomersList')->name('person.customers');
 
 Route::resource('payment-type', 'PaymentTypeController');
 

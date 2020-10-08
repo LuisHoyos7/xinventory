@@ -9,8 +9,9 @@
             @endif
         </h3>
         <div class="col-md-8 my-10">
-            {{ Form::label('')}}
-            {{ Form::select('person_id',$people, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione', 'required', 'id'=>'person','my' =>'8']) }}
+            {{-- Form::label('') }}
+            {{ Form::select('person_id',$people, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione', 'required', 'id'=>'person','my' =>'8']) --}}
+            <select id="person-id" class="form-control select2" name="person_id"></select>
         </div>
   </div>
   <div class="card-body mt-10">
@@ -79,9 +80,9 @@
             <tr class="py-30">
                 <td><h4>Subtotal</h4></td>
                 <td>$<b id="totalPrice"></b></td>
-                <td><b  id="totalAmount"></b></td>
-                <td>$<b id="totalDiscount"></b</td>
-                <td><b  id="totalIva"></b</td>
+                <td><b id="totalAmount"></b></td>
+                <td>$<b id="totalDiscount"></b></td>
+                <td><b id="totalIva"></b></td>
                 <td>$<b id="total"></b></td>
                 <td></td>
                 <td></td>
@@ -99,3 +100,16 @@
 </div>
 {!! Form::close() !!}
 
+@push('scripts')
+<script>
+    $('#person-id').select2({
+        placeholder: 'Buscar cliente por identificación o nombres',
+        delay: 250,
+        minimumInputLength: 1,
+        ajax: {
+            url: '{{ route("person.customers") }}',
+            dataType: 'json',
+        },
+    });
+</script>
+@endpush

@@ -72,6 +72,7 @@
 		</div>
 	
 		@include('layouts.scripts')
+		@stack('scripts')
 
 	</body>
 	<!--fin de Body-->
