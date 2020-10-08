@@ -17,7 +17,7 @@ class Invoice extends Model
         'payment_type_id',
         'estado_id',
         'date',
-        'invoiceType'
+        'invoice_type'
     ];
 
     /**

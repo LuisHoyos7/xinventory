@@ -66,6 +66,7 @@ class InvoiceController extends Controller
             'payment_type_id' => 1,
             'estado_id'   => 2,
             'number_invoice' => 1,
+            'invoice_type' =>  1,
         ]);
 
         foreach($request->detalle as $key=>$detalles)
