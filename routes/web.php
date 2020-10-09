@@ -21,6 +21,7 @@ Route::resource('measure-unit', 'MeasureUnitController');
 Route::resource('color', 'ColorController');
 
 Route::resource('article', 'ArticleController');
+Route::get('article-list', 'ArticlesList')->name('article.list');
 
 Route::resource('discount', 'DiscountController');
 Route::post('discount/descuentos/reduccion', 'DiscountController@discountStock')->name('discount.stock');

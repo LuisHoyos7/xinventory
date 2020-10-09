@@ -12,6 +12,7 @@ use Faker\Generator as Faker;
 $factory->define(Article::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
+        'reference' => $faker->randomDigit."".$faker->randomLetter,
         'price' => $faker->numberBetween(10000, 5999999),
         'stock' => $faker->numberBetween(-10000, 10000),
         'category_id' => Category::all()->random()->id,

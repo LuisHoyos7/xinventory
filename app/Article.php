@@ -13,12 +13,14 @@ class Article extends Model
      */
     protected $fillable = [
         'name',
+        'reference',
         'price',
         'stock',
         'category_id',
         'color_id',
         'article_type_id',
         'measure_unit_id',
+        'is_active'
     ];
 
     /**

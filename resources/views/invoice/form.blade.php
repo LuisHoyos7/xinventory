@@ -9,8 +9,6 @@
             @endif
         </h3>
         <div class="col-md-8 my-10">
-            {{-- Form::label('') }}
-            {{ Form::select('person_id',$people, null, ['class'  => 'form-control', 'placeholder' => 'Seleccione', 'required', 'id'=>'person','my' =>'8']) --}}
             <select id="person-id" class="form-control select2" name="person_id"></select>
         </div>
   </div>
@@ -19,12 +17,14 @@
         <div class="row">
             <div class="col-md-4">
                 {{ Form::label('Articulo')}}
-                <select name="article_id" id="article" class="form-control">
+                <select id="article" class="form-control select2" name="article_id"></select>
+
+                {{--<select name="article_id" id="article" class="form-control">
                     <option placeholder="Seleccione un Articulo"></option>
                         @foreach ($articles as $article)
                             <option  value="{{$article->id}}"> {{$article->name}} - {{$article->color->name}}</option>
                         @endforeach
-                </select>
+                </select>--}}
             </div>
             <div class="col-md-1">
                 {{ Form::label('Stock')}}
@@ -108,6 +108,16 @@
         minimumInputLength: 1,
         ajax: {
             url: '{{ route("person.customers") }}',
+            dataType: 'json',
+        },
+    });
+
+    $('#article').select2({
+        placeholder: 'Buscar artículo',
+        delay: 250,
+        minimumInputLength: 1,
+        ajax: {
+            url: '{{ route("article.list") }}',
             dataType: 'json',
         },
     });
