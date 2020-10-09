@@ -7,7 +7,7 @@
 			</h3>
         </div>
 		<div class="card-toolbar">
-            <a href="{{route('invoice.create', ['invoiceType' => 'VENTA'])}}" class="btn btn-success font-weight-bolder">
+            <a href="{{route('invoice.create')}}" class="btn btn-success font-weight-bolder">
                 <span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:/metronic/themes/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
