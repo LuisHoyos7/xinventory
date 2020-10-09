@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MeasureUnitsTableSeeder::class);
         $this->call(ColorsTableSeeder::class);
         $this->call(ArticlesTableSeeder::class);
+        $this->call(PaymentTypesTableSeeder::class);
+        $this->call(EstadosTableSeeder::class);
+        $this->call(IvasTableSeeder::class);
     }
 }

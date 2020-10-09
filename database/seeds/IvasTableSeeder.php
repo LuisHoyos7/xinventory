@@ -1,9 +1,9 @@
 <?php
 
-use App\Category;
+use App\Iva;
 use Illuminate\Database\Seeder;
 
-class CategorySeeder extends Seeder
+class IvasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 5)->create();
+        factory(Iva::class, 2)->create();
     }
 }
