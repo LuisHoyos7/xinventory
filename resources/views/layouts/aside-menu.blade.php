@@ -2,7 +2,7 @@
 	<!--begin::Menu Nav-->
 	<ul class="menu-nav">
 		<li class="menu-item menu-item-active" aria-haspopup="true">
-			<a href="index.html" class="menu-link">
+			<a href="{{ route('home')}}" class="menu-link">
 				<span class="svg-icon menu-icon">
 					<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -18,8 +18,9 @@
 			</a>
 		</li>
 
+		<!-- INICIO menu de articulos -->
 		<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-			<a href="{{route('category.index')}}" class="menu-link menu-toggle">
+			<a href="" class="menu-link menu-toggle">
 				<span class="svg-icon menu-icon">
 					<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -30,7 +31,7 @@
 					</svg><!--end::Svg Icon-->
 					<!--end::Svg Icon-->
 				</span>
-				<span class="menu-text">Inventario</span>
+				<span class="menu-text">Artículos</span>
 				<i class="menu-arrow"></i>
 			</a>
 			<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
@@ -38,10 +39,9 @@
 					<ul class="menu-subnav">
 						<li class="menu-item menu-item-parent" aria-haspopup="true">
 							<span class="menu-link">
-								<span class="menu-text">Inventario</span>
+								<span class="menu-text">Artículos</span>
 							</span>
 						</li>
-
 						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 							<a href="{{route('article.index')}}"  class="menu-link menu-toggle">
 								<span class="svg-icon menu-icon">
@@ -55,112 +55,219 @@
 								</svg>
 								<!--end::Svg Icon-->
 								</span>
-								<span class="menu-text">Articulos</span>
+								<span class="menu-text">Artículos</span>
 							</a>
 						</li>
-						
+					</ul>
+			</div>
+		</li>
+		<!-- FIN menu de articulos-->
+
+		<!-- INICIO menu de COMRAS-->
+		<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+			<a href="{{route('category.index')}}" class="menu-link menu-toggle">
+				<span class="svg-icon menu-icon">
+					<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<rect x="0" y="0" width="24" height="24"/>
+							<rect fill="#000000" opacity="0.3" x="7" y="4" width="10" height="4"/>
+							<path d="M7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,20 C19,21.1045695 18.1045695,22 17,22 L7,22 C5.8954305,22 5,21.1045695 5,20 L5,4 C5,2.8954305 5.8954305,2 7,2 Z M8,12 C8.55228475,12 9,11.5522847 9,11 C9,10.4477153 8.55228475,10 8,10 C7.44771525,10 7,10.4477153 7,11 C7,11.5522847 7.44771525,12 8,12 Z M8,16 C8.55228475,16 9,15.5522847 9,15 C9,14.4477153 8.55228475,14 8,14 C7.44771525,14 7,14.4477153 7,15 C7,15.5522847 7.44771525,16 8,16 Z M12,12 C12.5522847,12 13,11.5522847 13,11 C13,10.4477153 12.5522847,10 12,10 C11.4477153,10 11,10.4477153 11,11 C11,11.5522847 11.4477153,12 12,12 Z M12,16 C12.5522847,16 13,15.5522847 13,15 C13,14.4477153 12.5522847,14 12,14 C11.4477153,14 11,14.4477153 11,15 C11,15.5522847 11.4477153,16 12,16 Z M16,12 C16.5522847,12 17,11.5522847 17,11 C17,10.4477153 16.5522847,10 16,10 C15.4477153,10 15,10.4477153 15,11 C15,11.5522847 15.4477153,12 16,12 Z M16,16 C16.5522847,16 17,15.5522847 17,15 C17,14.4477153 16.5522847,14 16,14 C15.4477153,14 15,14.4477153 15,15 C15,15.5522847 15.4477153,16 16,16 Z M16,20 C16.5522847,20 17,19.5522847 17,19 C17,18.4477153 16.5522847,18 16,18 C15.4477153,18 15,18.4477153 15,19 C15,19.5522847 15.4477153,20 16,20 Z M8,18 C7.44771525,18 7,18.4477153 7,19 C7,19.5522847 7.44771525,20 8,20 L12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 L8,18 Z M7,4 L7,8 L17,8 L17,4 L7,4 Z" fill="#000000"/>
+						</g>
+					</svg><!--end::Svg Icon-->
+					<!--end::Svg Icon-->
+				</span>
+				<span class="menu-text">Compras</span>
+				<i class="menu-arrow"></i>
+			</a>
+			<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
+				<i class="menu-arrow"></i>
+					<ul class="menu-subnav">
+						<li class="menu-item menu-item-parent" aria-haspopup="true">
+							<span class="menu-link">
+								<span class="menu-text">Compras</span>
+							</span>
+						</li>
 						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('category.index')}}"  class="menu-link menu-toggle">
+							<a href="{{route('estimate.index')}}"  class="menu-link menu-toggle">
 								<span class="svg-icon menu-icon">
 									<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
 									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 											<rect x="0" y="0" width="24" height="24"/>
-											<path d="M6,9 L6,15 C6,16.6568542 7.34314575,18 9,18 L15,18 L15,18.8181818 C15,20.2324881 14.2324881,21 12.8181818,21 L5.18181818,21 C3.76751186,21 3,20.2324881 3,18.8181818 L3,11.1818182 C3,9.76751186 3.76751186,9 5.18181818,9 L6,9 Z" fill="#000000" fill-rule="nonzero"/>
-											<path d="M10.1818182,4 L17.8181818,4 C19.2324881,4 20,4.76751186 20,6.18181818 L20,13.8181818 C20,15.2324881 19.2324881,16 17.8181818,16 L10.1818182,16 C8.76751186,16 8,15.2324881 8,13.8181818 L8,6.18181818 C8,4.76751186 8.76751186,4 10.1818182,4 Z" fill="#000000" opacity="0.3"/>
+											<path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
+											<path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
+											<rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
 										</g>
 									</svg>
-								<!--end::Svg Icon-->
+									<!--end::Svg Icon-->
 								</span>
-								<span class="menu-text">Categorias</span>
+								<span class="menu-text">Compras</span>
+							</a>
+						</li>
+					</ul>
+			</div>
+		</li>
+		<!-- FIN menu de COMRAS-->
+
+		<!-- INICIO menu de CONFIGURACION-->
+		<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+			<a href="{{route('category.index')}}" class="menu-link menu-toggle">
+				<span class="svg-icon menu-icon">
+					<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<rect x="0" y="0" width="24" height="24"/>
+							<rect fill="#000000" opacity="0.3" x="7" y="4" width="10" height="4"/>
+							<path d="M7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,20 C19,21.1045695 18.1045695,22 17,22 L7,22 C5.8954305,22 5,21.1045695 5,20 L5,4 C5,2.8954305 5.8954305,2 7,2 Z M8,12 C8.55228475,12 9,11.5522847 9,11 C9,10.4477153 8.55228475,10 8,10 C7.44771525,10 7,10.4477153 7,11 C7,11.5522847 7.44771525,12 8,12 Z M8,16 C8.55228475,16 9,15.5522847 9,15 C9,14.4477153 8.55228475,14 8,14 C7.44771525,14 7,14.4477153 7,15 C7,15.5522847 7.44771525,16 8,16 Z M12,12 C12.5522847,12 13,11.5522847 13,11 C13,10.4477153 12.5522847,10 12,10 C11.4477153,10 11,10.4477153 11,11 C11,11.5522847 11.4477153,12 12,12 Z M12,16 C12.5522847,16 13,15.5522847 13,15 C13,14.4477153 12.5522847,14 12,14 C11.4477153,14 11,14.4477153 11,15 C11,15.5522847 11.4477153,16 12,16 Z M16,12 C16.5522847,12 17,11.5522847 17,11 C17,10.4477153 16.5522847,10 16,10 C15.4477153,10 15,10.4477153 15,11 C15,11.5522847 15.4477153,12 16,12 Z M16,16 C16.5522847,16 17,15.5522847 17,15 C17,14.4477153 16.5522847,14 16,14 C15.4477153,14 15,14.4477153 15,15 C15,15.5522847 15.4477153,16 16,16 Z M16,20 C16.5522847,20 17,19.5522847 17,19 C17,18.4477153 16.5522847,18 16,18 C15.4477153,18 15,18.4477153 15,19 C15,19.5522847 15.4477153,20 16,20 Z M8,18 C7.44771525,18 7,18.4477153 7,19 C7,19.5522847 7.44771525,20 8,20 L12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 L8,18 Z M7,4 L7,8 L17,8 L17,4 L7,4 Z" fill="#000000"/>
+						</g>
+					</svg><!--end::Svg Icon-->
+						<!--end::Svg Icon-->
+				</span>
+				<span class="menu-text">Configuración</span>
+				<i class="menu-arrow"></i>
+			</a>
+			<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
+				<i class="menu-arrow"></i>
+					<ul class="menu-subnav">
+					<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+						<a href="{{route('category.index')}}"  class="menu-link menu-toggle">
+							<span class="svg-icon menu-icon">
+								<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<rect x="0" y="0" width="24" height="24"/>
+										<path d="M6,9 L6,15 C6,16.6568542 7.34314575,18 9,18 L15,18 L15,18.8181818 C15,20.2324881 14.2324881,21 12.8181818,21 L5.18181818,21 C3.76751186,21 3,20.2324881 3,18.8181818 L3,11.1818182 C3,9.76751186 3.76751186,9 5.18181818,9 L6,9 Z" fill="#000000" fill-rule="nonzero"/>
+										<path d="M10.1818182,4 L17.8181818,4 C19.2324881,4 20,4.76751186 20,6.18181818 L20,13.8181818 C20,15.2324881 19.2324881,16 17.8181818,16 L10.1818182,16 C8.76751186,16 8,15.2324881 8,13.8181818 L8,6.18181818 C8,4.76751186 8.76751186,4 10.1818182,4 Z" fill="#000000" opacity="0.3"/>
+									</g>
+								</svg>
+								<!--end::Svg Icon-->
+							</span>
+							<span class="menu-text">Categorias de artículos</span>
+						</a>
+					</li>
+					<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+						<a href="{{route('article-type.index')}}"  class="menu-link menu-toggle">
+							<span class="svg-icon menu-icon">
+								<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<polygon points="0 0 24 0 24 24 0 24"/>
+										<path d="M10,14 L5,14 C4.33333333,13.8856181 4,13.5522847 4,13 C4,12.4477153 4.33333333,12.1143819 5,12 L12,12 L12,19 C12,19.6666667 11.6666667,20 11,20 C10.3333333,20 10,19.6666667 10,19 L10,14 Z M15,9 L20,9 C20.6666667,9.11438192 21,9.44771525 21,10 C21,10.5522847 20.6666667,10.8856181 20,11 L13,11 L13,4 C13,3.33333333 13.3333333,3 14,3 C14.6666667,3 15,3.33333333 15,4 L15,9 Z" fill="#000000" fill-rule="nonzero"/>
+										<path d="M3.87867966,18.7071068 L6.70710678,15.8786797 C7.09763107,15.4881554 7.73079605,15.4881554 8.12132034,15.8786797 C8.51184464,16.2692039 8.51184464,16.9023689 8.12132034,17.2928932 L5.29289322,20.1213203 C4.90236893,20.5118446 4.26920395,20.5118446 3.87867966,20.1213203 C3.48815536,19.7307961 3.48815536,19.0976311 3.87867966,18.7071068 Z M16.8786797,5.70710678 L19.7071068,2.87867966 C20.0976311,2.48815536 20.7307961,2.48815536 21.1213203,2.87867966 C21.5118446,3.26920395 21.5118446,3.90236893 21.1213203,4.29289322 L18.2928932,7.12132034 C17.9023689,7.51184464 17.2692039,7.51184464 16.8786797,7.12132034 C16.4881554,6.73079605 16.4881554,6.09763107 16.8786797,5.70710678 Z" fill="#000000" opacity="0.3"/>
+									</g>
+								</svg>
+								<!--end::Svg Icon-->
+							</span>
+							<span class="menu-text">Tipos de Articulos</span>
+						</a>
+					</li>
+					<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+						<a href="{{route('measure-unit.index')}}"  class="menu-link menu-toggle">
+							<span class="svg-icon menu-icon">
+							<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<rect x="0" y="0" width="24" height="24"/>
+									<rect fill="#000000" opacity="0.3" x="7" y="4" width="10" height="4"/>
+									<path d="M7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,20 C19,21.1045695 18.1045695,22 17,22 L7,22 C5.8954305,22 5,21.1045695 5,20 L5,4 C5,2.8954305 5.8954305,2 7,2 Z M8,12 C8.55228475,12 9,11.5522847 9,11 C9,10.4477153 8.55228475,10 8,10 C7.44771525,10 7,10.4477153 7,11 C7,11.5522847 7.44771525,12 8,12 Z M8,16 C8.55228475,16 9,15.5522847 9,15 C9,14.4477153 8.55228475,14 8,14 C7.44771525,14 7,14.4477153 7,15 C7,15.5522847 7.44771525,16 8,16 Z M12,12 C12.5522847,12 13,11.5522847 13,11 C13,10.4477153 12.5522847,10 12,10 C11.4477153,10 11,10.4477153 11,11 C11,11.5522847 11.4477153,12 12,12 Z M12,16 C12.5522847,16 13,15.5522847 13,15 C13,14.4477153 12.5522847,14 12,14 C11.4477153,14 11,14.4477153 11,15 C11,15.5522847 11.4477153,16 12,16 Z M16,12 C16.5522847,12 17,11.5522847 17,11 C17,10.4477153 16.5522847,10 16,10 C15.4477153,10 15,10.4477153 15,11 C15,11.5522847 15.4477153,12 16,12 Z M16,16 C16.5522847,16 17,15.5522847 17,15 C17,14.4477153 16.5522847,14 16,14 C15.4477153,14 15,14.4477153 15,15 C15,15.5522847 15.4477153,16 16,16 Z M16,20 C16.5522847,20 17,19.5522847 17,19 C17,18.4477153 16.5522847,18 16,18 C15.4477153,18 15,18.4477153 15,19 C15,19.5522847 15.4477153,20 16,20 Z M8,18 C7.44771525,18 7,18.4477153 7,19 C7,19.5522847 7.44771525,20 8,20 L12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 L8,18 Z M7,4 L7,8 L17,8 L17,4 L7,4 Z" fill="#000000"/>
+								</g>
+							</svg>
+							<!--end::Svg Icon-->
+						</span>
+						<span class="menu-text">Unidad de Medida</span>
+						</a>
+					</li>
+					<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+						<a href="{{route('color.index')}}"  class="menu-link menu-toggle">
+							<span class="svg-icon menu-icon">
+							<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<rect x="0" y="0" width="24" height="24"/>
+									<path d="M12,21 C15.8659932,21 19,17.8659932 19,14 C19,11.4226712 16.6666667,8.08933783 12,4 C7.33333333,8.08933783 5,11.4226712 5,14 C5,17.8659932 8.13400675,21 12,21 Z" fill="#000000"/>
+								</g>
+							</svg>
+							<!--end::Svg Icon-->
+							</span>
+							<span class="menu-text">Colores</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<!-- FIN menu de CONFIGURACION-->
+
+		<!-- INCICIO menu de FACTURACION-->
+		<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+			<a href="{{route('category.index')}}" class="menu-link menu-toggle">
+				<span class="svg-icon menu-icon">
+					<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<rect x="0" y="0" width="24" height="24"/>
+							<circle fill="#000000" opacity="0.3" cx="20.5" cy="12.5" r="1.5"/>
+							<rect fill="#000000" opacity="0.3" transform="translate(12.000000, 6.500000) rotate(-15.000000) translate(-12.000000, -6.500000) " x="3" y="3" width="18" height="7" rx="1"/>
+							<path d="M22,9.33681558 C21.5453723,9.12084552 21.0367986,9 20.5,9 C18.5670034,9 17,10.5670034 17,12.5 C17,14.4329966 18.5670034,16 20.5,16 C21.0367986,16 21.5453723,15.8791545 22,15.6631844 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,9.33681558 Z" fill="#000000"/>
+						</g>
+					</svg>
+					<!--end::Svg Icon-->
+					<!--end::Svg Icon-->
+				</span>
+				<span class="menu-text">Facturacion</span>
+				<i class="menu-arrow"></i>
+			</a>
+			<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
+				<i class="menu-arrow"></i>
+					<ul class="menu-subnav">
+						<li class="menu-item menu-item-parent" aria-haspopup="true">
+							<span class="menu-link">
+								<span class="menu-text">Facturacion</span>
+							</span>
+						</li>
+						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+							<a href="{{route('invoice.index')}}"  class="menu-link menu-toggle">
+								<span class="svg-icon menu-icon">
+									<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+									<i class="flaticon2-checking"></i>
+									<!--end::Svg Icon-->
+								</span>
+								<span class="menu-text">Facturas por Ventas</span>
 							</a>
 						</li>
 						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('article-type.index')}}"  class="menu-link menu-toggle">
+							<a href="{{route('estimate.index')}}"  class="menu-link menu-toggle">
 								<span class="svg-icon menu-icon">
 									<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
 									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-											<polygon points="0 0 24 0 24 24 0 24"/>
-											<path d="M10,14 L5,14 C4.33333333,13.8856181 4,13.5522847 4,13 C4,12.4477153 4.33333333,12.1143819 5,12 L12,12 L12,19 C12,19.6666667 11.6666667,20 11,20 C10.3333333,20 10,19.6666667 10,19 L10,14 Z M15,9 L20,9 C20.6666667,9.11438192 21,9.44771525 21,10 C21,10.5522847 20.6666667,10.8856181 20,11 L13,11 L13,4 C13,3.33333333 13.3333333,3 14,3 C14.6666667,3 15,3.33333333 15,4 L15,9 Z" fill="#000000" fill-rule="nonzero"/>
-											<path d="M3.87867966,18.7071068 L6.70710678,15.8786797 C7.09763107,15.4881554 7.73079605,15.4881554 8.12132034,15.8786797 C8.51184464,16.2692039 8.51184464,16.9023689 8.12132034,17.2928932 L5.29289322,20.1213203 C4.90236893,20.5118446 4.26920395,20.5118446 3.87867966,20.1213203 C3.48815536,19.7307961 3.48815536,19.0976311 3.87867966,18.7071068 Z M16.8786797,5.70710678 L19.7071068,2.87867966 C20.0976311,2.48815536 20.7307961,2.48815536 21.1213203,2.87867966 C21.5118446,3.26920395 21.5118446,3.90236893 21.1213203,4.29289322 L18.2928932,7.12132034 C17.9023689,7.51184464 17.2692039,7.51184464 16.8786797,7.12132034 C16.4881554,6.73079605 16.4881554,6.09763107 16.8786797,5.70710678 Z" fill="#000000" opacity="0.3"/>
+											<rect x="0" y="0" width="24" height="24"/>
+											<path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
+											<path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
+											<rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
+											<rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
 										</g>
 									</svg>
-								<!--end::Svg Icon-->
+									<!--end::Svg Icon-->
 								</span>
-								<span class="menu-text">Tipos de Articulos</span>
-							</a>
-						</li>
-
-						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('measure-unit.index')}}"  class="menu-link menu-toggle">
-								<span class="svg-icon menu-icon">
-								<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<rect x="0" y="0" width="24" height="24"/>
-										<rect fill="#000000" opacity="0.3" x="7" y="4" width="10" height="4"/>
-										<path d="M7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,20 C19,21.1045695 18.1045695,22 17,22 L7,22 C5.8954305,22 5,21.1045695 5,20 L5,4 C5,2.8954305 5.8954305,2 7,2 Z M8,12 C8.55228475,12 9,11.5522847 9,11 C9,10.4477153 8.55228475,10 8,10 C7.44771525,10 7,10.4477153 7,11 C7,11.5522847 7.44771525,12 8,12 Z M8,16 C8.55228475,16 9,15.5522847 9,15 C9,14.4477153 8.55228475,14 8,14 C7.44771525,14 7,14.4477153 7,15 C7,15.5522847 7.44771525,16 8,16 Z M12,12 C12.5522847,12 13,11.5522847 13,11 C13,10.4477153 12.5522847,10 12,10 C11.4477153,10 11,10.4477153 11,11 C11,11.5522847 11.4477153,12 12,12 Z M12,16 C12.5522847,16 13,15.5522847 13,15 C13,14.4477153 12.5522847,14 12,14 C11.4477153,14 11,14.4477153 11,15 C11,15.5522847 11.4477153,16 12,16 Z M16,12 C16.5522847,12 17,11.5522847 17,11 C17,10.4477153 16.5522847,10 16,10 C15.4477153,10 15,10.4477153 15,11 C15,11.5522847 15.4477153,12 16,12 Z M16,16 C16.5522847,16 17,15.5522847 17,15 C17,14.4477153 16.5522847,14 16,14 C15.4477153,14 15,14.4477153 15,15 C15,15.5522847 15.4477153,16 16,16 Z M16,20 C16.5522847,20 17,19.5522847 17,19 C17,18.4477153 16.5522847,18 16,18 C15.4477153,18 15,18.4477153 15,19 C15,19.5522847 15.4477153,20 16,20 Z M8,18 C7.44771525,18 7,18.4477153 7,19 C7,19.5522847 7.44771525,20 8,20 L12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 L8,18 Z M7,4 L7,8 L17,8 L17,4 L7,4 Z" fill="#000000"/>
-									</g>
-								</svg>
-								<!--end::Svg Icon-->
-								</span>
-								<span class="menu-text">Unidad de Medida</span>
-							</a>
-						</li>
-			
-						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('color.index')}}"  class="menu-link menu-toggle">
-								<span class="svg-icon menu-icon">
-								<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<rect x="0" y="0" width="24" height="24"/>
-										<path d="M12,21 C15.8659932,21 19,17.8659932 19,14 C19,11.4226712 16.6666667,8.08933783 12,4 C7.33333333,8.08933783 5,11.4226712 5,14 C5,17.8659932 8.13400675,21 12,21 Z" fill="#000000"/>
-									</g>
-								</svg>
-								<!--end::Svg Icon-->
-								</span>
-								<span class="menu-text">Colores</span>
-							</a>
-						</li>
-
-						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('discount.index')}}"  class="menu-link menu-toggle">
-								<span class="svg-icon menu-icon">
-								<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-										<rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
-									</g>
-								</svg>
-								<!--end::Svg Icon-->
-								</span>
-								<span class="menu-text">Agregar Stock</span>
-							</a>
-						</li>
-			
-						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('discount.index',['idStock' => 1])}}"  class="menu-link menu-toggle">
-								<span class="svg-icon menu-icon">
-								<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-									</g>
-								</svg>
-								<!--end::Svg Icon-->
-								</span>
-								<span class="menu-text">Reducir Stock</span>
+								<span class="menu-text">Cotizaciones</span>
 							</a>
 						</li>
 					</ul>
 				</div>
 			</li>
+			<!-- FIN  menu de FACTURACION-->
 
-
-			
+			<!-- INCICIO menu de GASTOS-->
 			<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 				<a href="{{route('category.index')}}" class="menu-link menu-toggle">
 					<span class="svg-icon menu-icon">
@@ -168,190 +275,48 @@
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								<rect x="0" y="0" width="24" height="24"/>
-								<rect fill="#000000" opacity="0.3" x="7" y="4" width="10" height="4"/>
-								<path d="M7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,20 C19,21.1045695 18.1045695,22 17,22 L7,22 C5.8954305,22 5,21.1045695 5,20 L5,4 C5,2.8954305 5.8954305,2 7,2 Z M8,12 C8.55228475,12 9,11.5522847 9,11 C9,10.4477153 8.55228475,10 8,10 C7.44771525,10 7,10.4477153 7,11 C7,11.5522847 7.44771525,12 8,12 Z M8,16 C8.55228475,16 9,15.5522847 9,15 C9,14.4477153 8.55228475,14 8,14 C7.44771525,14 7,14.4477153 7,15 C7,15.5522847 7.44771525,16 8,16 Z M12,12 C12.5522847,12 13,11.5522847 13,11 C13,10.4477153 12.5522847,10 12,10 C11.4477153,10 11,10.4477153 11,11 C11,11.5522847 11.4477153,12 12,12 Z M12,16 C12.5522847,16 13,15.5522847 13,15 C13,14.4477153 12.5522847,14 12,14 C11.4477153,14 11,14.4477153 11,15 C11,15.5522847 11.4477153,16 12,16 Z M16,12 C16.5522847,12 17,11.5522847 17,11 C17,10.4477153 16.5522847,10 16,10 C15.4477153,10 15,10.4477153 15,11 C15,11.5522847 15.4477153,12 16,12 Z M16,16 C16.5522847,16 17,15.5522847 17,15 C17,14.4477153 16.5522847,14 16,14 C15.4477153,14 15,14.4477153 15,15 C15,15.5522847 15.4477153,16 16,16 Z M16,20 C16.5522847,20 17,19.5522847 17,19 C17,18.4477153 16.5522847,18 16,18 C15.4477153,18 15,18.4477153 15,19 C15,19.5522847 15.4477153,20 16,20 Z M8,18 C7.44771525,18 7,18.4477153 7,19 C7,19.5522847 7.44771525,20 8,20 L12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 L8,18 Z M7,4 L7,8 L17,8 L17,4 L7,4 Z" fill="#000000"/>
+								<rect fill="#000000" opacity="0.3" x="11.5" y="2" width="2" height="4" rx="1"/>
+								<rect fill="#000000" opacity="0.3" x="11.5" y="16" width="2" height="5" rx="1"/>
+								<path d="M15.493,8.044 C15.2143319,7.68933156 14.8501689,7.40750104 14.4005,7.1985 C13.9508311,6.98949895 13.5170021,6.885 13.099,6.885 C12.8836656,6.885 12.6651678,6.90399981 12.4435,6.942 C12.2218322,6.98000019 12.0223342,7.05283279 11.845,7.1605 C11.6676658,7.2681672 11.5188339,7.40749914 11.3985,7.5785 C11.2781661,7.74950085 11.218,7.96799867 11.218,8.234 C11.218,8.46200114 11.2654995,8.65199924 11.3605,8.804 C11.4555005,8.95600076 11.5948324,9.08899943 11.7785,9.203 C11.9621676,9.31700057 12.1806654,9.42149952 12.434,9.5165 C12.6873346,9.61150047 12.9723317,9.70966616 13.289,9.811 C13.7450023,9.96300076 14.2199975,10.1308324 14.714,10.3145 C15.2080025,10.4981676 15.6576646,10.7419985 16.063,11.046 C16.4683354,11.3500015 16.8039987,11.7268311 17.07,12.1765 C17.3360013,12.6261689 17.469,13.1866633 17.469,13.858 C17.469,14.6306705 17.3265014,15.2988305 17.0415,15.8625 C16.7564986,16.4261695 16.3733357,16.8916648 15.892,17.259 C15.4106643,17.6263352 14.8596698,17.8986658 14.239,18.076 C13.6183302,18.2533342 12.97867,18.342 12.32,18.342 C11.3573285,18.342 10.4263378,18.1741683 9.527,17.8385 C8.62766217,17.5028317 7.88033631,17.0246698 7.285,16.404 L9.413,14.238 C9.74233498,14.6433354 10.176164,14.9821653 10.7145,15.2545 C11.252836,15.5268347 11.7879973,15.663 12.32,15.663 C12.5606679,15.663 12.7949989,15.6376669 13.023,15.587 C13.2510011,15.5363331 13.4504991,15.4540006 13.6215,15.34 C13.7925009,15.2259994 13.9286662,15.0740009 14.03,14.884 C14.1313338,14.693999 14.182,14.4660013 14.182,14.2 C14.182,13.9466654 14.1186673,13.7313342 13.992,13.554 C13.8653327,13.3766658 13.6848345,13.2151674 13.4505,13.0695 C13.2161655,12.9238326 12.9248351,12.7908339 12.5765,12.6705 C12.2281649,12.5501661 11.8323355,12.420334 11.389,12.281 C10.9583312,12.141666 10.5371687,11.9770009 10.1255,11.787 C9.71383127,11.596999 9.34650161,11.3531682 9.0235,11.0555 C8.70049838,10.7578318 8.44083431,10.3968355 8.2445,9.9725 C8.04816568,9.54816454 7.95,9.03200304 7.95,8.424 C7.95,7.67666293 8.10199848,7.03700266 8.406,6.505 C8.71000152,5.97299734 9.10899753,5.53600171 9.603,5.194 C10.0970025,4.85199829 10.6543302,4.60183412 11.275,4.4435 C11.8956698,4.28516587 12.5226635,4.206 13.156,4.206 C13.9160038,4.206 14.6918294,4.34533194 15.4835,4.624 C16.2751706,4.90266806 16.9686637,5.31433061 17.564,5.859 L15.493,8.044 Z" fill="#000000"/>
 							</g>
 						</svg><!--end::Svg Icon-->
-						<!--end::Svg Icon-->
-					</span>
-					<span class="menu-text">Compras</span>
-					<i class="menu-arrow"></i>
-				</a>
-				<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
-					<i class="menu-arrow"></i>
-						<ul class="menu-subnav">
-							<li class="menu-item menu-item-parent" aria-haspopup="true">
-								<span class="menu-link">
-									<span class="menu-text">Compras</span>
-								</span>
-							</li>
-							<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-								<a href="{{route('estimate.index')}}"  class="menu-link menu-toggle">
-									<span class="svg-icon menu-icon">
-										<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect x="0" y="0" width="24" height="24"/>
-												<path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
-												<path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
-												<rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
-											</g>
-										</svg>
-									<!--end::Svg Icon-->
-									</span>
-									<span class="menu-text">Compras</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-			</li>
-
-			<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-				<a href="{{route('category.index')}}" class="menu-link menu-toggle">
-					<span class="svg-icon menu-icon">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-								<rect x="0" y="0" width="24" height="24"/>
-								<rect fill="#000000" opacity="0.3" x="7" y="4" width="10" height="4"/>
-								<path d="M7,2 L17,2 C18.1045695,2 19,2.8954305 19,4 L19,20 C19,21.1045695 18.1045695,22 17,22 L7,22 C5.8954305,22 5,21.1045695 5,20 L5,4 C5,2.8954305 5.8954305,2 7,2 Z M8,12 C8.55228475,12 9,11.5522847 9,11 C9,10.4477153 8.55228475,10 8,10 C7.44771525,10 7,10.4477153 7,11 C7,11.5522847 7.44771525,12 8,12 Z M8,16 C8.55228475,16 9,15.5522847 9,15 C9,14.4477153 8.55228475,14 8,14 C7.44771525,14 7,14.4477153 7,15 C7,15.5522847 7.44771525,16 8,16 Z M12,12 C12.5522847,12 13,11.5522847 13,11 C13,10.4477153 12.5522847,10 12,10 C11.4477153,10 11,10.4477153 11,11 C11,11.5522847 11.4477153,12 12,12 Z M12,16 C12.5522847,16 13,15.5522847 13,15 C13,14.4477153 12.5522847,14 12,14 C11.4477153,14 11,14.4477153 11,15 C11,15.5522847 11.4477153,16 12,16 Z M16,12 C16.5522847,12 17,11.5522847 17,11 C17,10.4477153 16.5522847,10 16,10 C15.4477153,10 15,10.4477153 15,11 C15,11.5522847 15.4477153,12 16,12 Z M16,16 C16.5522847,16 17,15.5522847 17,15 C17,14.4477153 16.5522847,14 16,14 C15.4477153,14 15,14.4477153 15,15 C15,15.5522847 15.4477153,16 16,16 Z M16,20 C16.5522847,20 17,19.5522847 17,19 C17,18.4477153 16.5522847,18 16,18 C15.4477153,18 15,18.4477153 15,19 C15,19.5522847 15.4477153,20 16,20 Z M8,18 C7.44771525,18 7,18.4477153 7,19 C7,19.5522847 7.44771525,20 8,20 L12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 L8,18 Z M7,4 L7,8 L17,8 L17,4 L7,4 Z" fill="#000000"/>
-							</g>
-						</svg><!--end::Svg Icon-->
-						<!--end::Svg Icon-->
-					</span>
-					<span class="menu-text">Cotizaciones</span>
-					<i class="menu-arrow"></i>
-				</a>
-				<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
-					<i class="menu-arrow"></i>
-						<ul class="menu-subnav">
-							<li class="menu-item menu-item-parent" aria-haspopup="true">
-								<span class="menu-link">
-									<span class="menu-text">Cotizaciones</span>
-								</span>
-							</li>
-							
-						</ul>
-					</div>
-				</li>
-
-			<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-				<a href="{{route('category.index')}}" class="menu-link menu-toggle">
-					<span class="svg-icon menu-icon">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-								<rect x="0" y="0" width="24" height="24"/>
-								<circle fill="#000000" opacity="0.3" cx="20.5" cy="12.5" r="1.5"/>
-								<rect fill="#000000" opacity="0.3" transform="translate(12.000000, 6.500000) rotate(-15.000000) translate(-12.000000, -6.500000) " x="3" y="3" width="18" height="7" rx="1"/>
-								<path d="M22,9.33681558 C21.5453723,9.12084552 21.0367986,9 20.5,9 C18.5670034,9 17,10.5670034 17,12.5 C17,14.4329966 18.5670034,16 20.5,16 C21.0367986,16 21.5453723,15.8791545 22,15.6631844 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,9.33681558 Z" fill="#000000"/>
-							</g>
-						</svg>
-						<!--end::Svg Icon-->
-						<!--end::Svg Icon-->
-					</span>
-					<span class="menu-text">Facturacion</span>
-					<i class="menu-arrow"></i>
-				</a>
-				<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
-					<i class="menu-arrow"></i>
-						<ul class="menu-subnav">
-							<li class="menu-item menu-item-parent" aria-haspopup="true">
-								<span class="menu-link">
-									<span class="menu-text">Facturacion</span>
-								</span>
-							</li>
-							<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-								<a href="{{route('invoice.index',['invoiceType' => 'VENTA'])}}"  class="menu-link menu-toggle">
-									<span class="svg-icon menu-icon">
-										<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-										<i class="flaticon2-checking"></i>
-									<!--end::Svg Icon-->
-									</span>
-									<span class="menu-text">Facturas por Ventas</span>
-								</a>
-							</li>
-							<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-								<a href="{{route('estimate.index')}}"  class="menu-link menu-toggle">
-									<span class="svg-icon menu-icon">
-										<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect x="0" y="0" width="24" height="24"/>
-												<path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
-												<path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
-												<rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
-												<rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
-											</g>
-										</svg>
-									<!--end::Svg Icon-->
-									</span>
-									<span class="menu-text">Cotizaciones</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-
-
-				<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-					<a href="{{route('category.index')}}" class="menu-link menu-toggle">
-						<span class="svg-icon menu-icon">
-							<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-									<rect x="0" y="0" width="24" height="24"/>
-									<rect fill="#000000" opacity="0.3" x="11.5" y="2" width="2" height="4" rx="1"/>
-									<rect fill="#000000" opacity="0.3" x="11.5" y="16" width="2" height="5" rx="1"/>
-									<path d="M15.493,8.044 C15.2143319,7.68933156 14.8501689,7.40750104 14.4005,7.1985 C13.9508311,6.98949895 13.5170021,6.885 13.099,6.885 C12.8836656,6.885 12.6651678,6.90399981 12.4435,6.942 C12.2218322,6.98000019 12.0223342,7.05283279 11.845,7.1605 C11.6676658,7.2681672 11.5188339,7.40749914 11.3985,7.5785 C11.2781661,7.74950085 11.218,7.96799867 11.218,8.234 C11.218,8.46200114 11.2654995,8.65199924 11.3605,8.804 C11.4555005,8.95600076 11.5948324,9.08899943 11.7785,9.203 C11.9621676,9.31700057 12.1806654,9.42149952 12.434,9.5165 C12.6873346,9.61150047 12.9723317,9.70966616 13.289,9.811 C13.7450023,9.96300076 14.2199975,10.1308324 14.714,10.3145 C15.2080025,10.4981676 15.6576646,10.7419985 16.063,11.046 C16.4683354,11.3500015 16.8039987,11.7268311 17.07,12.1765 C17.3360013,12.6261689 17.469,13.1866633 17.469,13.858 C17.469,14.6306705 17.3265014,15.2988305 17.0415,15.8625 C16.7564986,16.4261695 16.3733357,16.8916648 15.892,17.259 C15.4106643,17.6263352 14.8596698,17.8986658 14.239,18.076 C13.6183302,18.2533342 12.97867,18.342 12.32,18.342 C11.3573285,18.342 10.4263378,18.1741683 9.527,17.8385 C8.62766217,17.5028317 7.88033631,17.0246698 7.285,16.404 L9.413,14.238 C9.74233498,14.6433354 10.176164,14.9821653 10.7145,15.2545 C11.252836,15.5268347 11.7879973,15.663 12.32,15.663 C12.5606679,15.663 12.7949989,15.6376669 13.023,15.587 C13.2510011,15.5363331 13.4504991,15.4540006 13.6215,15.34 C13.7925009,15.2259994 13.9286662,15.0740009 14.03,14.884 C14.1313338,14.693999 14.182,14.4660013 14.182,14.2 C14.182,13.9466654 14.1186673,13.7313342 13.992,13.554 C13.8653327,13.3766658 13.6848345,13.2151674 13.4505,13.0695 C13.2161655,12.9238326 12.9248351,12.7908339 12.5765,12.6705 C12.2281649,12.5501661 11.8323355,12.420334 11.389,12.281 C10.9583312,12.141666 10.5371687,11.9770009 10.1255,11.787 C9.71383127,11.596999 9.34650161,11.3531682 9.0235,11.0555 C8.70049838,10.7578318 8.44083431,10.3968355 8.2445,9.9725 C8.04816568,9.54816454 7.95,9.03200304 7.95,8.424 C7.95,7.67666293 8.10199848,7.03700266 8.406,6.505 C8.71000152,5.97299734 9.10899753,5.53600171 9.603,5.194 C10.0970025,4.85199829 10.6543302,4.60183412 11.275,4.4435 C11.8956698,4.28516587 12.5226635,4.206 13.156,4.206 C13.9160038,4.206 14.6918294,4.34533194 15.4835,4.624 C16.2751706,4.90266806 16.9686637,5.31433061 17.564,5.859 L15.493,8.044 Z" fill="#000000"/>
-								</g>
-							</svg><!--end::Svg Icon-->
 							<!--end::Svg Icon-->
-						</span>
-						<span class="menu-text">Gastos</span>
-						<i class="menu-arrow"></i>
-					</a>
-					<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
-						<i class="menu-arrow"></i>
-							<ul class="menu-subnav">
-								<li class="menu-item menu-item-parent" aria-haspopup="true">
-									<span class="menu-link">
-										<span class="menu-text">Gastos</span>
-									</span>
-								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('invoice.index')}}"  class="menu-link menu-toggle">
-										<span class="svg-icon menu-icon">
-											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-													<rect x="0" y="0" width="24" height="24"/>
-													<path d="M4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 Z" fill="#000000" opacity="0.3"/>
-													<path d="M18.5,11 L5.5,11 C4.67157288,11 4,11.6715729 4,12.5 L4,13 L8.58578644,13 C8.85100293,13 9.10535684,13.1053568 9.29289322,13.2928932 L10.2928932,14.2928932 C10.7456461,14.7456461 11.3597108,15 12,15 C12.6402892,15 13.2543539,14.7456461 13.7071068,14.2928932 L14.7071068,13.2928932 C14.8946432,13.1053568 15.1489971,13 15.4142136,13 L20,13 L20,12.5 C20,11.6715729 19.3284271,11 18.5,11 Z" fill="#000000"/>
-													<path d="M5.5,6 C4.67157288,6 4,6.67157288 4,7.5 L4,8 L20,8 L20,7.5 C20,6.67157288 19.3284271,6 18.5,6 L5.5,6 Z" fill="#000000"/>
-												</g>
-											</svg>
+					</span>
+					<span class="menu-text">Gastos</span>
+					<i class="menu-arrow"></i>
+				</a>
+				<div class="menu-submenu" kt-hidden-height="80" style="display: none; overflow: hidden;">
+					<i class="menu-arrow"></i>
+						<ul class="menu-subnav">
+							<li class="menu-item menu-item-parent" aria-haspopup="true">
+								<span class="menu-link">
+									<span class="menu-text">Gastos</span>
+								</span>
+							</li>
+							<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<a href="{{route('invoice.index')}}"  class="menu-link menu-toggle">
+									<span class="svg-icon menu-icon">
+										<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<rect x="0" y="0" width="24" height="24"/>
+												<path d="M4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 Z" fill="#000000" opacity="0.3"/>
+												<path d="M18.5,11 L5.5,11 C4.67157288,11 4,11.6715729 4,12.5 L4,13 L8.58578644,13 C8.85100293,13 9.10535684,13.1053568 9.29289322,13.2928932 L10.2928932,14.2928932 C10.7456461,14.7456461 11.3597108,15 12,15 C12.6402892,15 13.2543539,14.7456461 13.7071068,14.2928932 L14.7071068,13.2928932 C14.8946432,13.1053568 15.1489971,13 15.4142136,13 L20,13 L20,12.5 C20,11.6715729 19.3284271,11 18.5,11 Z" fill="#000000"/>
+												<path d="M5.5,6 C4.67157288,6 4,6.67157288 4,7.5 L4,8 L20,8 L20,7.5 C20,6.67157288 19.3284271,6 18.5,6 L5.5,6 Z" fill="#000000"/>
+											</g>
+										</svg>
 										<!--end::Svg Icon-->
-										</span>
-										<span class="menu-text">Pago a Empleados</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</li>
+									</span>
+									<span class="menu-text">Pago a Empleados</span>
+								</a>
+							</li>
+						</ul>
+				</div>
+			</li>
+			<!-- FIN menu de FACTURACION-->
 
-				
-				<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+			<!-- INICIO menu de TERCEROS-->
+			<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 					<a href="{{route('person.index')}}" class="menu-link menu-toggle">
 						<span class="svg-icon menu-icon">
 							<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -390,7 +355,6 @@
 										<span class="menu-text">Personas</span>
 									</a>
 								</li>
-
 								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('user.index')}}"  class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
@@ -408,33 +372,14 @@
 										<span class="menu-text">usuarios del Sistema</span>
 									</a>
 								</li>
-							
-							
 							</ul>
-						</div>
-					</li>
-		</ul>
+					</div>
+				</li>
+			</ul>
 	</div>
+<!-- FIN menu de TERCEROS-->
 
 
 
 
 
-
-
-<!-- submenus 
-	<div class="menu-submenu">
-				<i class="menu-arrow"></i>
-					<ul class="menu-subnav">
-						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="javascript:;" class="menu-link menu-toggle">
-								<i class="menu-bullet menu-bullet-line">
-									<span></span>
-								</i>
-								<span class="menu-text">Usuarios</span>
-							</a>
-						</li>
-					</ul>
-			</div>
-
--->

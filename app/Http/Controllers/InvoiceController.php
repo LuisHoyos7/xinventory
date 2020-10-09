@@ -19,23 +19,10 @@ class InvoiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
-        if ($request->invoiceType == 'VENTA'){
+    {  
+        $invoices = Invoice::paginate(5);
 
-            $invoiceType = 'VENTA';
-
-            $invoices = Invoice::where('invoiceType', 'VENTA');
-
-            return view('invoice.index', compact('invoices','invoiceType'));
-        
-        }else{
-
-            $invoiceType = 'COMPRA';
-
-            $invoices = Invoice::where('invoiceType', 'COMPRA');
-
-            return view('invoice.index', compact('invoices','invoiceType'));
-        }
+        return view('invoice.index', compact('invoices'));
     }
 
     /**
