@@ -231,7 +231,7 @@
 							</span>
 						</li>
 						<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-							<a href="{{route('invoice.index',['invoiceType' => 'VENTA'])}}"  class="menu-link menu-toggle">
+							<a href="{{route('invoice.index')}}"  class="menu-link menu-toggle">
 								<span class="svg-icon menu-icon">
 									<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
 									<i class="flaticon2-checking"></i>
