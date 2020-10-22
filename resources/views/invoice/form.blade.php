@@ -1,4 +1,6 @@
-{!! Form::open(['route' => 'invoice.store']) !!}
+<card-pos></card-pos>
+
+{{--{!! Form::open(['route' => 'invoice.store']) !!}
 <div class="card card-custom gutter-b example example-compact">
 	<div class="card-header">
 		<h3 class="card-title">
@@ -8,23 +10,16 @@
             Crear Factura de Compra
             @endif
         </h3>
-        <div class="col-md-8 my-10">
+        <div class="col-md-8 my-5">
             <select id="person-id" class="form-control select2" name="person_id"></select>
         </div>
   </div>
-  <div class="card-body mt-10">
+  <div class="card-body">
 	<div class="form-group form-group-last">
         <div class="row">
             <div class="col-md-4">
                 {{ Form::label('Articulo')}}
                 <select id="article" class="form-control select2" name="article_id"></select>
-
-                {{--<select name="article_id" id="article" class="form-control">
-                    <option placeholder="Seleccione un Articulo"></option>
-                        @foreach ($articles as $article)
-                            <option  value="{{$article->id}}"> {{$article->name}} - {{$article->color->name}}</option>
-                        @endforeach
-                </select>--}}
             </div>
             <div class="col-md-1">
                 {{ Form::label('Stock')}}
@@ -48,9 +43,12 @@
             </div>
             <div class="col-md-1">
                 {{ Form::label('Agregar')}}
-                <a type="buttom" class="btn btn-icon btn-danger" id="addInvoice">
+                <button class="btn btn-icon btn-light-success" id="addInvoice">
                     <i class="flaticon2-plus"></i>
-                </a>
+                </button>
+                <!--<a type="buttom" class="btn btn-icon btn-light-success" id="addInvoice">
+                    <i class="flaticon2-plus"></i>
+                </a>-->
             </div>
         </div>
     </div>
@@ -122,4 +120,4 @@
         },
     });
 </script>
-@endpush
+@endpush--}}

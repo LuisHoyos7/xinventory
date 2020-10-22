@@ -54,7 +54,7 @@
 					<!--inico Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 						<div class="d-flex flex-column-fluid">
-							<div class="container">
+							<div class="container" id="app">
 								
 									@yield('content')	
 								
